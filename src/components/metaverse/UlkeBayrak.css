@@ -1,0 +1,82 @@
+
+.labelEasy{
+    width: 10rem;
+    cursor: pointer;
+    background: lightgreen;
+    user-select: none;
+    padding: 1rem;
+    border-radius: 2rem;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.2s;
+  }
+  
+  .labelEasy:hover{
+    background-color: rgb(47, 248, 255);
+  }
+  
+  .labelMedium{
+    width: 10rem;
+    cursor: pointer;
+    background-color: rgb(168, 252, 255);
+    user-select: none;
+    padding: 1rem;
+    border-radius: 2rem;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.2s;
+  }
+  
+  .labelMedium:hover{
+    background-color: rgb(47, 248, 255);
+  }
+  
+  .labelHard{
+    width: 10rem;
+    cursor: pointer;
+    background-color: rgb(253, 108, 98);
+    user-select: none;
+    padding: 1rem;
+    border-radius: 2rem;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.2s;
+  }
+  
+  .labelHard:hover{
+    background-color: rgb(47, 248, 255);
+  }
+
+  input {
+  
+    -webkit-appearance: none; /* Webkit/Blink browsers */
+    -moz-appearance: none; /* Firefox */
+    -ms-appearance: none; /* Microsoft Edge */
+    appearance: none;
+  }
+
+  input::-webkit-radio {
+    display: none;
+  }
+  
+  /* If you want to remove the dot in Firefox */
+  input::-moz-radio {
+    display: none;
+  }
+  
+  /* If you want to remove the dot in Edge */
+  input::-ms-radio {
+    display: none;
+  }
+
+
+
+  
+/* Add a media query for smaller screens */
+/* @media (max-width: 600px) {
+ 
+  img {
+    max-width: 60%;
+    height: auto; 
+  }
+} */

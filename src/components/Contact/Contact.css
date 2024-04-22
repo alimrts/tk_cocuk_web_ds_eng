@@ -1,0 +1,378 @@
+.contact-form{
+  padding: 0 3rem 0 3rem;
+  display: flex;
+  flex-direction: row;
+  height: 45rem;
+  margin-top: 4rem;
+}
+
+.left-column-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  margin-left: -2rem;
+}
+
+
+.right-column-contact{
+  display: flex;
+  justify-content: center;
+  margin-left: -4rem;
+  width: 70%;
+  padding: 0 20px;
+  margin-right: 4rem;
+  margin-bottom: 4rem;
+}
+
+.right-column-contact>form
+{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.right-column-contact .user{
+    width: 20rem;
+    height: 2rem;
+    padding: 0.3em;
+    outline: none;
+    border: 2px solid var(--orange);
+    border-radius: 8px;
+    font-size: 16px;   
+}
+
+textarea{
+    height: 4rem!important;
+}
+
+
+
+
+
+
+  
+
+/* ///////// for media queries ///////// */ 
+
+/* Extra Small Devices (Portrait and Landscape) */
+@media only screen and (max-width: 319px) {
+
+}
+
+/* Mobile Phones (Portrait and Landscape) */
+@media only screen and (min-width: 320px) and (max-width: 374px) {
+  .contact-form{
+    padding: 0 3rem 0 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 55rem;
+    margin-top: -5rem;
+  }
+  
+  .left-column-contact {
+    width: 30%;
+    margin-left: 0rem;
+    margin-top: -40rem;
+    transform: scale(0.8)
+  }
+  
+  .right-column-contact{
+    display: flex;
+    justify-content: center;
+    margin-left: 1rem;
+    width: 70%;
+    padding: 0 20px;
+    margin-right: 1rem;
+    margin-bottom: 4rem;
+    transform: scale(0.75);
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 424px) {
+  .contact-form{
+    padding: 0 3rem 0 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 55rem;
+    margin-top: -5rem;
+  }
+  
+  .left-column-contact {
+    width: 30%;
+    margin-left: 0rem;
+    margin-top: -40rem;
+    transform: scale(0.9)
+  }
+  
+  .right-column-contact{
+    display: flex;
+    justify-content: center;
+    margin-left: 1rem;
+    width: 70%;
+    padding: 0 20px;
+    margin-right: 1rem;
+    margin-bottom: 4rem;
+    transform: scale(0.8);
+  }
+}
+
+@media only screen and (min-width: 425px) and (max-width: 767px) {
+  .contact-form{
+    padding: 0 3rem 0 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 55rem;
+    margin-top: -5rem;
+  }
+  
+  .left-column-contact {
+    width: 30%;
+    margin-left: 0rem;
+    margin-top: -35rem;
+    transform: scale(1)
+  }
+  
+  .right-column-contact{
+    display: flex;
+    justify-content: center;
+    margin-left: 1rem;
+    width: 70%;
+    padding: 0 20px;
+    margin-right: 1rem;
+    margin-bottom: 4rem;
+    transform: scale(0.85);
+  }
+}
+
+/* Tablets Portrait */
+@media only screen and (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
+  .contact-form{
+    padding: 0 3rem 0 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 55rem;
+    margin-top: -5rem;
+  }
+  
+  .left-column-contact {
+    width: 30%;
+    margin-left: 0rem;
+    margin-top: -35rem;
+    transform: scale(0.8)
+  }
+  
+  .right-column-contact{
+    display: flex;
+    justify-content: center;
+    margin-left: 1rem;
+    width: 70%;
+    padding: 0 20px;
+    margin-right: 1rem;
+    margin-bottom: 4rem;
+    transform: scale(0.85);
+  }
+}
+
+/* Tablets Landscape */
+@media only screen and (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+  .contact-form{
+    padding: 0 3rem 0 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 55rem;
+    margin-top: -5rem;
+  }
+  
+  .left-column-contact {
+    width: 30%;
+    margin-left: 0rem;
+    margin-top: -30rem;
+    transform: scale(0.8)
+  }
+  
+  .right-column-contact{
+    display: flex;
+    justify-content: center;
+    margin-left: 1rem;
+    width: 70%;
+    padding: 0 20px;
+    margin-right: 1rem;
+    margin-bottom: 4rem;
+    transform: scale(0.85);
+  }
+}
+
+/* Tablets and Small Desktops */
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  .contact-form{
+    padding: 0 3rem 0 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 55rem;
+    margin-top: 5rem;
+  }
+  
+  .left-column-contact {
+    width: 30%;
+    margin-left: 0rem;
+    margin-top: -35rem;
+    transform: scale(1)
+  }
+  
+  .right-column-contact{
+    display: flex;
+    justify-content: center;
+    margin-left: 1rem;
+    width: 70%;
+    padding: 0 20px;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 4rem;
+    transform: scale(1);
+  }
+}
+
+/* Large Screens (Desktops, Laptops) */
+@media only screen and (min-width: 1200px) and (max-width: 1439px) {
+  .contact-form{
+    padding: 0 3rem 0 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 55rem;
+    margin-top: 5rem;
+  }
+  
+  .left-column-contact {
+    width: 30%;
+    margin-left: 0rem;
+    margin-top: -35rem;
+    transform: scale(1)
+  }
+  
+  .right-column-contact{
+    display: flex;
+    justify-content: center;
+    margin-left: 1rem;
+    width: 70%;
+    padding: 0 20px;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 4rem;
+    transform: scale(1);
+  }
+}
+
+@media only screen and (min-width: 1440px) and (max-width: 1919px) {
+  .contact-form{
+    padding: 0 3rem 0 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: -7rem;
+    height: 50rem;
+    margin-top: 5rem;
+  }
+  
+  .left-column-contact {
+    width: 30%;
+    margin-left: 0rem;
+    margin-top: -35rem;
+    transform: scale(1)
+  }
+  
+  .right-column-contact{
+    display: flex;
+    justify-content: center;
+    margin-left: 1rem;
+    width: 70%;
+    padding: 0 20px;
+    margin-top: -25rem;
+    margin-right: 1rem;
+    margin-bottom: 4rem;
+    transform: scale(1);
+  }
+}
+
+/* Extra Large Screens (Desktops, TVs) */
+@media only screen and (min-width: 1920px) {
+  .contact-form{
+    padding: 0 3rem 0 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: -5rem;
+    height: 50rem;
+    margin-top: 5rem;
+  }
+  
+  .left-column-contact {
+    width: 30%;
+    margin-left: 0rem;
+    margin-top: -35rem;
+    transform: scale(1)
+  }
+  
+  .right-column-contact{
+    display: flex;
+    justify-content: center;
+    margin-left: 1rem;
+    width: 70%;
+    padding: 0 20px;
+    margin-top: -25rem;
+    margin-right: 1rem;
+    margin-bottom: 4rem;
+    transform: scale(1);
+  }
+}
+
+/* Extra Large Screens (Desktops, TVs) */
+@media only screen and (min-width: 2200px) {
+  .contact-form{
+    padding: 0 3rem 0 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: -7rem;
+    height: 50rem;
+    margin-top: 5rem;
+  }
+  
+  .left-column-contact {
+    width: 30%;
+    margin-left: 0rem;
+    margin-top: -35rem;
+    transform: scale(1)
+  }
+  
+  .right-column-contact{
+    display: flex;
+    justify-content: center;
+    margin-left: 1rem;
+    width: 70%;
+    padding: 0 20px;
+    margin-top: -25rem;
+    margin-right: 1rem;
+    margin-bottom: 4rem;
+    transform: scale(1);
+  }
+
+}

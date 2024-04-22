@@ -1,0 +1,26 @@
+{
+    "yukleniyor":"Yükleniyor...",
+    "registerPageGiris":"TÜİK Çocuk Platformu Giriş",
+    "registerPageBilgileriDoldur":"Bilgileri Doldur ve Başla",
+    "registerPageAdin":"Adın",
+    "registerPageKilon":"Kilon kg",
+    "registerPageBoyun":"Boyun cm",
+    "registerPageSehir":"Yaşadığın İl",
+    "registerPageCinsiyetin":"Cinsiyetin",
+    "registerPageErkek":"Erkek",
+    "registerPageKiz":"Kız",
+    "registerPageDogumTarihin":"Doğum Tarihin",
+    "registerPageGun":"Gün",
+    "registerPageAy":"Ay",
+    "registerPageYil":"Yıl",
+    "registerPageBaslayalim":"Başlayalım",
+    "registerPageFormuTemizle":"Form Temizle",
+    "registerPageLutfenGerekliBilgiler":"Lütfen gerekli bilgileri doldurunuz.",
+    "registerPageBuAlanZorunludur":"Bu alan zorunludur.",
+    "apiHatasi":"Hata!",
+    "apiHatasiAciklama":"Gerekli bilgiler oluşturulamadı.",
+    "registerPageRestrictedText":"Adın için kısıtlı kelimeleri kullanamazsın."
+
+
+
+}

@@ -1,0 +1,135 @@
+.floatingDiv {
+  justify-content: space-around;
+  background: #f8f8f8;
+  box-shadow: var(--boxShadow);
+  border-radius: 17px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 0px 18px 0px 0px;
+  height: 4.5rem;
+  cursor: pointer;
+  transition: transform 0.3s; /* Animation */
+}
+.floatingDiv:hover {
+  transform: scale(
+    1.25
+  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+.floatingDiv > img {
+  transform: scale(0.8);
+}
+.floatingDiv > span {
+  font-family: sans-serif;
+  font-size: 16px;
+  /* yahan ye color add kia hy bad mein dark mode k waqt */
+  color: #1795a8;
+}
+
+.floatingDivForLogo {
+  justify-content: space-around;
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 0px 18px 0px 10px;
+  height: 4.5rem;
+  cursor: pointer;
+  transition: transform 0.3s; /* Animation */
+}
+.floatingDivForLogo:hover {
+  transform: scale(1.05);
+}
+.floatingDivForLogo > img {
+  transform: scale(0.8);
+}
+
+.floatingDivForMenu {
+  display: flex;
+  align-items: center;
+
+  padding: 0px 18px 0px 0px;
+  height: 4.5rem;
+  cursor: pointer;
+  transition: transform 0.3s; /* Animation */
+}
+.floatingDivForMenu:hover {
+  transform: scale(1.05);
+
+  filter: sepia(100%) hue-rotate(-100deg) saturate(200%) brightness(100%);
+}
+.floatingDivForMenu > img {
+  transform: scale(0.8);
+}
+
+/* ----- */
+.floatingDivForMenuAlt {
+  display: flex;
+  align-items: center;
+  padding: 0px 18px 0px 0px;
+  height: 4.5rem;
+  cursor: pointer;
+  transition: transform 0.3s; /* Animation */
+}
+.floatingDivForMenuAlt:hover {
+  transform: scale(1.05);
+
+  filter: sepia(100%) hue-rotate(60deg) saturate(250%) brightness(100%) contrast(200%);
+}
+.floatingDivForMenuAlt > img {
+  transform: scale(0.8);
+}
+/* ----- */
+
+
+
+.floatingDivForIntroRight {
+  display: flex;
+  align-items: center;
+  padding: 0px 18px 0px 0px;
+  height: 4.5rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.floatingDivForIntroRight:hover {
+  transform: scale(1.05);
+
+  filter: saturate(200%) brightness(100%);
+}
+.floatingDivForIntroRight > img {
+  transform: scale(0.8);
+}
+
+/* Media query for mobile devices */
+@media (max-width: 767px) {
+  .floatingDivForMenu {
+    transform: scale(0.6);
+  }
+
+  .floatingDiv {
+    transform: scale(0.6);
+  }
+
+  .floatingDivForIntroRight {
+    transform: scale(0.6);
+  }
+
+  .floatingDivForLogo {
+    justify-content: left;
+    margin-top: 4rem;
+    margin-left: -17rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    transform: scale(0.8);
+    height: 2.5rem;
+    cursor: pointer;
+    transition: transform 0.3s; /* Animation */
+  }
+  .floatingDivForLogo:hover {
+    transform: scale(0.61);
+  }
+  .floatingDivForLogo > img {
+    transform: scale(0.61);
+  }
+}

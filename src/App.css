@@ -1,0 +1,302 @@
+:root {
+  --yellow: #f5c32c;
+  --orange: #fca61f;
+  --blue: #3574fc;
+  --black: #242d49;
+  --gray: #788097;
+  --blueCard: #ddf8fe;
+  --purple: rgb(238 210 255);
+  --boxShadow: 0px 19px 60px rgb(0 0 0 / 8%);
+  --orangeCard: rgba(252, 166, 31, 0.45);
+  --smboxShadow: -79px 51px 60px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+@font-face {
+  font-family: 'Noteworthy-Bold';
+  src: url('./fonts/Noteworthy-Bold.ttf') format('truetype');
+  size-adjust: 100%;
+}
+
+.App {
+  padding: 0.5rem 2.5rem;
+  overflow: hidden;
+  color: var(--black);
+}
+
+@media screen and (max-width: 767px) {
+  .App {
+    padding: 0.5rem 1rem;
+  }
+
+}
+
+.button {
+  background: linear-gradient(180deg, #fdc50f 26.71%, #fb982f 99.36%);
+  box-shadow: 0px 4px 12px 1px rgba(251, 161, 40, 0.42);
+  border-radius: 34px;
+  border: none;
+  color: white;
+  font-size: 16px;
+  padding: 11px 26px 11px 26px;
+}
+
+.button:hover {
+  background: white;
+  cursor: pointer;
+  border: 1px solid var(--orange);
+  color: var(--orange);
+}
+
+.button-disabled {
+  color: #ccc;
+  background: linear-gradient(180deg, #adadad 26.71%, #747474 99.36%);
+  background-color: #eee;
+  border-color: #ccc;
+  cursor: default;
+}
+
+.button-disabled:hover {
+  color: #ccc;
+  background: linear-gradient(180deg, #adadad 26.71%, #747474 99.36%);
+  background-color: #eee;
+  border-color: #ccc;
+  cursor: default;
+}
+
+
+#progress {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  height: 70px;
+  width: 70px;
+  display: none;
+  place-items: center;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+#progress-value {
+  display: block;
+  height: calc(100% - 15px);
+  width: calc(100% - 15px);
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 35px;
+  color: #001a2e;
+}
+
+#right-arrow {
+  display: flex;
+  height: 100px;
+  width: 100px;
+  /* background-color: #ffffff; */
+  border-radius: 50%;
+
+  place-items: center;
+  font-size: 35px;
+  color: #001a2e;
+}
+
+.canvas-container {
+  width: '100%';
+  height: 100vh;
+  background-color: #282c34;
+  cursor: auto;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  z-index: 9999; /* make sure the overlay is above all other elements */
+}
+
+.metaverse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000; /* make sure the Metaverse component is above the overlay */
+}
+
+
+
+
+/* for popups on metaverse */
+.popup-containerM {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Adjust the alpha value as needed */
+  display: block;
+  z-index: 4;
+}
+
+.popup-contentM {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(117, 117, 117, 0.1); /* Adjust as needed */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.close-buttonM {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: red;
+  z-index: 1;
+  cursor: pointer;
+  user-select: none;
+}
+
+
+
+
+/* ///////// for media queries ///////// */ 
+
+/* Extra Small Devices (Portrait and Landscape) */
+@media only screen and (max-width: 319px) {
+  .popup-contentM {
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    margin-left: -5rem;
+    transform: scale(0.6);
+  }
+}
+
+/* Mobile Phones (Portrait and Landscape) */
+@media only screen and (min-width: 320px) and (max-width: 374px) {
+ 
+  .popup-contentM {
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    margin-left: -5rem;
+    transform: scale(0.6);
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 424px) {
+  .popup-contentM {
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    margin-left: -4rem;
+    transform: scale(0.7);
+  }
+}
+
+@media only screen and (min-width: 425px) and (max-width: 767px) {
+  .popup-contentM {
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    margin-left: -2.5rem;
+    transform: scale(0.8);
+  }
+ 
+}
+
+/* Tablets Portrait */
+@media only screen and (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
+ 
+  .popup-contentM {
+    position: absolute;
+    top: -4%;
+    left: 1%;
+    margin-left: 5.5rem;
+    transform: scale(0.85);
+  }
+}
+
+/* Tablets Landscape */
+@media only screen and (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+
+  .popup-contentM {
+    position: absolute;
+    top: -4%;
+    left: 1%;
+    margin-left: 5.5rem;
+    transform: scale(0.85);
+  }
+}
+
+/* Tablets and Small Desktops */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .popup-contentM {
+    position: absolute;
+    top: -4%;
+    left: 1%;
+    margin-left: 7.5rem;
+    
+    transform: scale(0.85);
+  }
+ 
+}
+
+/* Large Screens (Desktops, Laptops) */
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+ 
+  .popup-contentM {
+    position: absolute;
+    top: -4%;
+    left: 1%;
+    margin-left: 15rem;
+    transform: scale(0.85);
+  }
+}
+
+@media only screen and (min-width: 1440px) and (max-width: 1919px) {
+  .popup-contentM {
+    position: absolute;
+    top: -3%;
+    left: 10%;
+    margin-left: 15rem;
+    transform: scale(0.9);
+  }
+}
+
+/* Extra Large Screens (Desktops, TVs) */
+@media only screen and (min-width: 1920px) {
+  .popup-contentM {
+    position: absolute;
+    top: 10%;
+    left: 28%;
+    margin-left: 8rem;
+    transform: scale(1);
+  }
+}
+
+
+/* Extra Large Screens (Desktops, TVs) */
+@media only screen and (min-width: 1921px) and (max-width: 2561px) {
+  .popup-contentM {
+    position: absolute;
+    top: 10%;
+    left: 28%;
+    margin-left: 8rem;
+    transform: scale(1);
+  }
+}
+
+
+

@@ -1,0 +1,166 @@
+.memoryGameContent{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  
+}
+
+.controls{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+  user-select: none;
+}
+
+.ustBar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 22rem;
+  padding: 0.5rem;
+}
+
+.restart{
+  margin-top: 0.5rem;
+}
+
+.mGamebuttonKolay{
+  width: 10rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: lightgreen;
+  user-select: none;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.2s;
+}
+
+.mGamebuttonKolay:hover{
+  background-color: rgb(47, 248, 255);
+}
+
+.mGamebuttonNormal{
+  width: 10rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: rgb(168, 252, 255);
+  user-select: none;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.2s;
+}
+
+.mGamebuttonNormal:hover{
+  background-color: rgb(47, 248, 255);
+}
+
+.mGamebuttonZor{
+  width: 10rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: rgb(253, 108, 98);
+  user-select: none;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.2s;
+}
+
+.mGamebuttonZor:hover{
+  background-color: rgb(47, 248, 255);
+}
+
+.mGamebuttonYenile{
+  width: 12rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  margin-bottom: 1rem;
+  background-color: rgb(162, 255, 149);
+  user-select: none;
+  font-size: 1rem;
+  padding: 0.2rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.2s;
+}
+
+.mGamebuttonYenile:hover{
+  background-color: rgb(47, 248, 255);
+}
+
+.score{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 20rem;
+}
+
+.cardContainer {
+  padding: 10px;
+  border-radius: 0.5rem;
+  /* box-shadow: 0 0 4px 4px #DEDEDE; */
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr;
+  justify-items: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 auto;
+  perspective: 100%;
+  max-width: 600px;
+  user-select: none;
+}
+
+.cardMemoryGame {
+  width: 62px;
+  height: 62px;
+  border-radius: 4px;
+  /* box-shadow: 2px 2px 4px 4px #DEDEDE; */
+  transition: 0.3s;
+  transform-style: preserve-3d;
+  position: relative;
+  cursor: pointer;
+}
+
+.cardMemoryGame img {
+  width: 110%;
+  height: 110%;
+}
+
+.cardMemoryGame .card-face {
+  backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.cardMemoryGame .card-face.card-back-face {
+  transform: rotateY(180deg);
+}
+
+.cardMemoryGame.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.cardMemoryGame.is-inactive {
+  opacity: 0;
+}

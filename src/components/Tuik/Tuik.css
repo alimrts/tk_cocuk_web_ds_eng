@@ -1,0 +1,505 @@
+.container-tuik {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4rem;
+  margin-right: 1rem;
+}
+
+.left-column-tuik {
+  width: 30%;
+  margin-left: 0rem;
+  transform: scale(1);
+}
+
+.right-column-tuik {
+  width: 70%;
+  margin-top: -10rem;
+  min-width: 18rem;
+  padding: 0 20px;
+  margin-bottom: 4rem;
+  transform: scale(1);
+
+}
+
+.tuik-images{
+  width: 640px;
+}
+
+
+/* .tuik-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 35rem;
+  max-height: auto;
+  min-height: 16rem;
+  margin:auto;
+
+  background: rgba(255, 255, 255, 0.86);
+  border: 7px solid var(--blueCard);
+  border-radius: 20px;
+  cursor: pointer;
+ 
+  line-height: 1.4;
+  object-fit: cover;
+  white-space: normal;
+  overflow: hidden;
+  padding: 2vh;
+  
+}
+
+
+.tuik-card-text {
+  text-align: center;
+  font-size: 1rem;
+} */
+
+.swiper-button-prev-tuik {
+  display: flex;
+  position: absolute;
+  left: 0; 
+  top: 50%; 
+  margin-left: -4rem;
+  transform: translateY(-50%) scaleX(-1); 
+  cursor: pointer;
+  z-index: 999;
+}
+.swiper-button-next-tuik {
+  display: flex;
+  position: absolute;
+  right: 0; 
+  top: 50%; 
+  margin-right: -4rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 999;
+}
+
+
+.swiper-button-prev-tuik:hover,
+.swiper-button-next-tuik:hover {
+  filter: brightness(1.1); /* Example of a hover effect, you can adjust as needed */
+  transition: transform 0.3s ease; /* Adding transition for smooth animation */
+}
+
+/* ///////// for media queries ///////// */ 
+
+/* Extra Small Devices (Portrait and Landscape) */
+@media only screen and (max-width: 319px) {
+  .container-tuik {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30rem;
+    margin-left: 0rem;
+    margin-top: -12rem;
+  }
+
+
+  .left-column-tuik {
+    margin-top: -18rem;
+    margin-left: -10rem;
+    transform: scale(0.6);
+   
+  }
+  .right-column-tuik {
+    margin-top: -12rem;
+    margin-left: 1rem;
+    min-width: 18rem;
+    transform: scale(0.8);
+  }
+
+
+  .tuik-images{
+    width: 340px;
+  }
+
+  .swiper-button-prev-tuik{
+    transform: translateY(-100%) scale(-0.5); 
+    margin-left: -0.5rem;
+  }
+
+  .swiper-button-next-tuik {
+    transform: translateY(-100%) scale(0.5);
+    margin-right: -0.5rem;
+  }
+}
+
+/* Mobile Phones (Portrait and Landscape) */
+@media only screen and (min-width: 320px) and (max-width: 374px) {
+  .container-tuik {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50rem;
+    margin-left: 0rem;
+    margin-top: 22rem;
+  }
+
+  .left-column-tuik {
+    margin-top: -32rem;
+    margin-left: -13rem;
+    transform: scale(0.75);
+  }
+
+  .right-column-tuik {
+    margin-top: -6rem;
+    margin-left: 1rem;
+    min-width: 18rem;
+    transform: scale(0.8);
+  }
+
+  .tuik-images{
+    width: 340px;
+  }
+
+  .swiper-button-prev-tuik{
+    transform: translateY(-100%) scale(-0.5); 
+    margin-left: -0.5rem;
+  }
+
+  .swiper-button-next-tuik {
+    transform: translateY(-100%) scale(0.5);
+    margin-right: -0.5rem;
+  }
+
+}
+
+@media only screen and (min-width: 375px) and (max-width: 424px) {
+  .container-tuik {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50rem;
+    margin-left: 0rem;
+    margin-top: 22rem;
+  }
+
+  .left-column-tuik {
+    margin-top: -32rem;
+    margin-left: -13rem;
+    transform: scale(0.75);
+  }
+
+  .right-column-tuik {
+    margin-top: -6rem;
+    margin-left: 1rem;
+    min-width: 21rem;
+    transform: scale(0.8);
+  }
+
+  .tuik-images{
+    width: 400px;
+  }
+
+  .swiper-button-prev-tuik{
+    transform: translateY(-100%) scale(-0.6); 
+    margin-left: -0.5rem;
+  }
+
+  .swiper-button-next-tuik {
+    transform: translateY(-100%) scale(0.6);
+    margin-right: -0.5rem;
+  }
+ 
+}
+
+@media only screen and (min-width: 425px) and (max-width: 767px) {
+  .container-tuik {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50rem;
+    margin-left: 0rem;
+    margin-top: 22rem;
+  }
+
+  .left-column-tuik {
+    margin-top: -22rem;
+    margin-left: -16rem;
+    transform: scale(1);
+  }
+
+  .right-column-tuik {
+    margin-top: -2rem;
+    margin-left: 1rem;
+    min-width: 21rem;
+    transform: scale(0.8);
+  }
+
+  .tuik-images{
+    width: 440px;
+  }
+
+  .swiper-button-prev-tuik{
+    transform: translateY(-100%) scale(-0.6); 
+    margin-left: -1.9rem;
+  }
+
+  .swiper-button-next-tuik {
+    transform: translateY(-100%) scale(0.6);
+    margin-right: -1.9rem;
+  }
+ 
+
+ 
+}
+
+/* Tablets Portrait */
+@media only screen and (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
+  .container-tuik {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50rem;
+    margin-left: 0rem;
+    margin-top: -8rem;
+  }
+
+  .left-column-tuik {
+    margin-top: -18rem;
+    margin-left: -10rem;
+    transform: scale(0.6);
+  }
+  
+  .right-column-tuik {
+    margin-top: -12rem;
+    margin-left: 1rem;
+    min-width: 21rem;
+    transform: scale(0.8);
+  }
+
+  .tuik-images{
+    width: 440px;
+  }
+
+  .swiper-button-prev-tuik{
+    transform: translateY(-100%) scale(-0.6); 
+    margin-left: -1.9rem;
+  }
+
+  .swiper-button-next-tuik {
+    transform: translateY(-100%) scale(0.6);
+    margin-right: -1.9rem;
+  }
+ 
+
+  
+}
+
+/* Tablets Landscape */
+@media only screen and (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+  .container-tuik {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50rem;
+    margin-left: 0rem;
+    margin-top: -8rem;
+  }
+
+  .left-column-tuik {
+    margin-top: -18rem;
+    margin-left: -10rem;
+    transform: scale(0.6);
+  }
+  
+  .right-column-tuik {
+    margin-top: -12rem;
+    margin-left: 1rem;
+    min-width: 21rem;
+    transform: scale(0.8);
+  }
+
+  .tuik-images{
+    width: 440px;
+  }
+
+  .swiper-button-prev-tuik{
+    transform: translateY(-100%) scale(-0.6); 
+    margin-left: -1.9rem;
+  }
+
+  .swiper-button-next-tuik {
+    transform: translateY(-100%) scale(0.6);
+    margin-right: -1.9rem;
+  }
+ 
+
+ 
+  
+}
+
+/* Tablets and Small Desktops */
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  .container-tuik {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50rem;
+    margin-left: 0rem;
+    margin-top: 27rem;
+  }
+
+  .left-column-tuik {
+    margin-top: -18rem;
+    margin-left: -12.5rem;
+    transform: scale(1);
+  }
+  
+  .right-column-tuik {
+    margin-top: -1rem;
+    margin-left: 1rem;
+    min-width: 32rem;
+    transform: scale(1);
+  }
+
+  .tuik-images{
+    width: 640px;
+  }
+
+  .swiper-button-prev-tuik{
+    transform: translateY(-100%) scale(-1); 
+    margin-left: -1.9rem;
+  }
+
+  .swiper-button-next-tuik {
+    transform: translateY(-100%) scale(1);
+    margin-right: -1.9rem;
+  }
+
+ 
+}
+
+/* Large Screens (Desktops, Laptops) */
+@media only screen and (min-width: 1200px) and (max-width: 1439px) {
+  .container-tuik {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -21rem;
+  }
+
+  .left-column-tuik {
+    margin-top: -8rem;
+    margin-left: -2rem;
+    transform: scale(0.9);
+   
+  }
+  .right-column-tuik {
+    margin-top: -5rem;
+    margin-left: 5rem;
+    min-width: 35rem;
+    transform: scale(0.9);
+  }
+
+  .tuik-images{
+    width: 640px;
+  }
+
+  .swiper-button-prev-tuik{
+    transform: translateY(-100%) scale(-1); 
+    margin-left: -1.9rem;
+  }
+
+  .swiper-button-next-tuik {
+    transform: translateY(-100%) scale(1);
+    margin-right: -1.9rem;
+  }
+
+ 
+ 
+}
+
+@media only screen and (min-width: 1440px) and (max-width: 1919px) {
+  .container-tuik {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -21rem;
+  }
+
+  .left-column-tuik {
+    margin-top: -8rem;
+    margin-left: -2rem;
+    transform: scale(1);
+   
+  }
+  .right-column-tuik {
+    margin-top: -5rem;
+    margin-left: 5rem;
+    min-width: 35rem;
+  }
+
+  .tuik-images{
+    width: 640px;
+  }
+
+  .swiper-button-prev-tuik{
+    transform: translateY(-100%) scale(-1); 
+    margin-left: 1rem;
+  }
+
+  .swiper-button-next-tuik {
+    transform: translateY(-100%) scale(1);
+    margin-right: 1rem;
+  }
+}
+
+/* Extra Large Screens (Desktops, TVs) */
+@media only screen and (min-width: 1920px) {
+  .container-tuik {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -30rem;
+  }
+  
+  .left-column-tuik {
+    margin-right: 0rem;
+  }
+  
+  .right-column-tuik {
+    margin-top: 2rem;
+    max-width: 35rem;
+    margin-right: 15rem;
+  }
+
+}
+
+/* Extra Large Screens (Desktops, TVs) */
+@media only screen and (min-width: 2200px) {
+  .container-tuik {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: -30rem;
+    margin-left: -5rem;
+  }
+  
+  .left-column-tuik {
+    margin-left: -5rem;
+  }
+  
+  .right-column-tuik {
+    margin-top: 3rem;
+    max-width: 35rem;
+    margin-left: 15rem;
+  }
+
+}
+

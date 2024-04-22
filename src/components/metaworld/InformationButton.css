@@ -1,0 +1,75 @@
+/* InformationButton.css */
+
+.information-button {
+    position: fixed;
+    /* left: 20px;
+    top: 50%; */
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 1;
+    transition: opacity 0.3s;
+    animation: glow 2s infinite alternate;
+    user-select: none;
+    
+  }
+  
+  .information-button:hover {
+    /* transform: scale(1.1); */
+    filter: brightness(1.5);
+    animation: none;
+    
+  }
+  
+  .information-button img {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .information-button img.clicked {
+    animation: none; /* Disable glow animation when clicked */
+  }
+  
+  @keyframes glow {
+    from {
+      opacity: 0.2;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* InformationButton.css */
+
+.information-text {
+    position: fixed;
+    left: 85px;
+    top: 50%;
+    margin-top: -0.3rem;
+    background: #323632a4;
+    border-radius: 0.4rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    transform: translateX(-10%) translateY(-50%); /* Start off-screen to the left */
+    font-size: 24px;
+    color: lightblue;
+    z-index: 1;
+    text-align: center;
+    user-select: none;
+    transition: opacity 0.3s;
+    animation: slideIn 0.5s forwards; /* Animation duration and fill-mode */
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateX(-10%) translateY(-50%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0) translateY(-50%);
+      opacity: 1;
+    }
+  }
+  

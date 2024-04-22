@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charSet="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Ülkeler</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='./style_of_flags.css'>
+
+</head>
+
+<body>
+
+
+    <section class="card" id="card">
+        <img class="headerImg" src="ulkeler_header.png"/>
+
+        <section id="selection" class="popupSelection">
+            <section  class="level-selection" >
+                <label for="level">Zorluk seviyesi seç:</label>
+                <select id="level" onchange="updateLevel()" style="margin-top: 1rem;">
+                    <option value="easy">Kolay</option>
+                    <option value="medium">Normal</option>
+                    <option value="hard">Zor</option>
+                </select>
+                <button id="startButton" class="buttonStart" onclick="startGame()">Başla</button>
+            </section>
+         </section>
+
+        <section class="infobar" >
+
+            <div class="questionNumber">Soru - <span id="questionNumber">0</span>/<span id="totalQuestions">-</span></div>
+            <div class="score">Puan: <span id="score">0</span></div>
+            <div class="cevap"><span id="cevap">-</span></div>
+
+
+        </section>
+        <div class="container" id="container">
+            <section class="section">
+                <img src="" alt="flag" class="flag" id="flag">
+            </section>
+            <div class="border"></div>
+            <section class="section" id="optionhalf">
+                <div class="score" style="color: white;">Yandaki bayrak hangi ülkenin bayrağıdır?</div>
+
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" value="" name="option" id="option1input" class="optionradio" hidden >
+                        <label for="option1input" class="label" id="option1label"></label>
+                    </div>
+                    <!-- Add the 'wrong' class to the wrong options -->
+                    <div class="option">
+                        <input type="radio" value="" name="option" id="option2input" class="optionradio" hidden>
+                        <label for="option2input" class="label wrong" id="option2label"></label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" value="" name="option" id="option3input" class="optionradio" hidden>
+                        <label for="option3input" class="label wrong" id="option3label"></label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" value="" name="option" id="option4input" class="optionradio" hidden>
+                        <label for="option4input" class="label wrong" id="option4label"></label>
+                    </div>
+
+
+                    <!-- Add the next button -->
+
+                </div>
+                <button id="nextButton" class="buttonNext" onclick="nextQuestion()">Sonraki Soru</button>
+            </section>
+        </div>
+    </section>
+
+
+    <section id="alert" class="popup">
+        <div class="popup-content">
+            <div class="alerttext">Doğru cevap: <span id="alertscore"></span></div>
+            <div class="alerttext">Puan: <span id="alertscoreLast"></span></div>
+
+            <button onclick="refresh()" class="button" style="margin-top: 20px">Tekrar</button>
+        </div>
+    </section>
+
+    <script işd="customScript" src='countries_easy.js'></script>
+    <script src='main.js'></script>
+
+</body>
+
+</html>

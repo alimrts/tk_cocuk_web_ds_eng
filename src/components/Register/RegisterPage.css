@@ -1,0 +1,526 @@
+/* register page */
+.registerPage-root{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+  height: 100vh;
+  width: 100%;
+  transform: scale(0.9);
+
+}
+
+.registerPage-left{
+  display: block;
+  z-index: 1;
+  width: 34rem;
+  height: 48rem;
+  display: flex;
+  justify-content: center;
+  margin-left: -12rem;
+  margin-top: 12rem;
+  z-index: 9;
+}
+
+
+.registerPage-right{
+  display: block;
+  width: 32rem;
+  height: 32rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: -4rem;
+  margin-top: -4rem;
+}
+
+.canvas-left {
+  width: 30vw;
+  height: 60vh;
+  min-width: 20vw;
+  min-height: 30vh;
+  /* margin-left: 2rem; */
+  cursor: pointer;
+  user-select: none;
+}
+
+
+.canvas-right {
+  width: 30vw;
+  height: 60vh;
+  min-width: 20vw;
+  min-height: 30vh;
+  margin-left: -3rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+
+
+.formWrapper {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 14pt;
+  z-index: 9;
+}
+
+.formTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 14pt;
+  width: 14rem;
+}
+
+.formTitle2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 12pt;
+  width: 16rem;
+}
+
+.footer-image{
+  transform: scale(1);
+ 
+  
+}
+
+.footer-register{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: -8.5rem;
+}
+
+
+/* ///////// for media queries ///////// */ 
+
+/* Extra Small Devices (Portrait and Landscape) */
+@media only screen and (max-width: 319px) {
+  .registerPage-root{
+    width: 120%;
+    margin-left: -1.2rem;
+    margin-top: 1rem;
+    transform: scale(0.7);
+  }
+
+  .registerPage-left{
+    width: 20rem;
+    height: 35rem;
+    margin-left: -14rem;
+    margin-top: 7rem;
+  }
+
+  .formWrapper {
+    font-size: 10pt;
+    margin-top: -1rem;
+    transform: scale(0.8);
+    margin-right: 5rem;
+  }
+
+  .formTitle {
+    margin-top: 1rem;
+    font-size: 16pt;
+    
+  }
+  .formTitle2 {
+    font-size: 12pt;
+  }
+}
+
+/* Mobile Phones (Portrait and Landscape) */
+@media only screen and (min-width: 320px) and (max-width: 374px) {
+  .registerPage-root{
+    width: 120%;
+    margin-left: -1.5rem;
+    margin-top: 1rem;
+    transform: scale(0.85);
+    
+  }
+
+  .registerPage-left{
+    width: 20rem;
+    height: 35rem;
+    margin-left: -14rem;
+    margin-top: 7rem;
+  }
+
+  .formWrapper {
+    font-size: 10pt;
+    margin-top: -1rem;
+    transform: scale(0.8);
+    margin-right: 5rem;
+  }
+
+  .formTitle {
+    margin-top: 1rem;
+    font-size: 16pt;
+    
+  }
+  .formTitle2 {
+    font-size: 12pt;
+  }
+
+  
+}
+
+@media only screen and (min-width: 375px) and (max-width: 424px) {
+  .registerPage-root{
+    width: 120%;
+    margin-left: -2rem;
+    margin-top: 1rem;
+    transform: scale(0.95);
+  }
+
+  .registerPage-left{
+    width: 20rem;
+    height: 35rem;
+    margin-left: -14rem;
+    margin-top: 7rem;
+  }
+
+  .formWrapper {
+    font-size: 10pt;
+    margin-top: -1rem;
+    transform: scale(0.8);
+    margin-right: 5rem;
+  }
+
+  .formTitle {
+    margin-top: 1rem;
+    font-size: 16pt;
+    
+  }
+  .formTitle2 {
+    font-size: 12pt;
+  }
+}
+
+@media only screen and (min-width: 425px) and (max-width: 767px) {
+  .registerPage-root{
+    width: 120%;
+    margin-left: -4rem;
+    margin-top: 1rem;
+    transform: scale(0.95);
+  }
+
+  .registerPage-left{
+    width: 20rem;
+    height: 39rem;
+    margin-left: -14rem;
+    margin-top: 22rem;
+  }
+
+  .formWrapper {
+    font-size: 10pt;
+    margin-top: -1rem;
+    transform: scale(0.8);
+    margin-right: 2rem;
+  }
+
+  .formTitle {
+    margin-top: 1rem;
+    font-size: 16pt;
+    
+  }
+  .formTitle2 {
+    font-size: 12pt;
+  }
+
+ 
+}
+
+
+
+
+/* Tablets Portrait */
+@media only screen and (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
+  .registerPage-root{
+    width: 130%;
+    margin-left: -5rem;
+    margin-top: 1rem;
+    transform: scale(0.9);
+  }
+
+  .registerPage-left{
+    width: 20rem;
+    height: 39rem;
+    margin-left: -12rem;
+    margin-top: 25rem;
+  }
+
+  .formWrapper {
+    font-size: 10pt;
+    margin-top: -1rem;
+    transform: scale(0.8);
+    margin-right: 2rem;
+  }
+  
+  .formTitle {
+    margin-top: 1rem;
+    font-size: 16pt;
+    
+  }
+  .formTitle2 {
+    font-size: 12pt;
+  }
+
+  .canvas-left {
+    margin-left: 22rem;
+  }
+
+  .canvas-right {
+    margin-right: 4rem;
+  }
+}
+
+/* Tablets Landscape */
+@media only screen and (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+  .registerPage-root{
+    width: 130%;
+    margin-left: -5rem;
+    margin-top: 1rem;
+    transform: scale(0.95);
+  }
+
+  .registerPage-left{
+    width: 20rem;
+    height: 39rem;
+    margin-left: -12rem;
+    margin-top: 25rem;
+  }
+
+  .formWrapper {
+    font-size: 10pt;
+    margin-top: -1rem;
+    transform: scale(0.8);
+    margin-right: 2rem;
+  }
+  
+  .formTitle {
+    margin-top: 1rem;
+    font-size: 16pt;
+    
+  }
+  .formTitle2 {
+    font-size: 12pt;
+  }
+
+  .canvas-left {
+    margin-left: 22rem;
+  }
+
+  .canvas-right {
+    margin-right: 4rem;
+  }
+}
+
+/* Tablets and Small Desktops */
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  .registerPage-root{
+    width: 130%;
+    margin-left: -5rem;
+    margin-top: 1rem;
+    transform: scale(0.95);
+  }
+
+  .registerPage-left{
+    width: 30rem;
+    height: 48rem;
+    margin-left: -10rem;
+    margin-top: 25rem;
+  }
+
+  .formWrapper {
+    font-size: 10pt;
+    margin-top: -1rem;
+    transform: scale(0.8);
+    margin-right: 2rem;
+  }
+  
+  .formTitle {
+    margin-top: 1rem;
+    font-size: 16pt;
+    
+  }
+  .formTitle2 {
+    font-size: 12pt;
+  }
+
+  .canvas-left {
+    margin-left: 22rem;
+  }
+
+  .canvas-right {
+    margin-right: 4rem;
+  }
+}
+
+/* Large Screens (Desktops, Laptops) */
+@media only screen and (min-width: 1200px) and (max-width: 1439px) {
+  .registerPage-root{
+    width: 120%;
+    margin-left: -4rem;
+    margin-top: 1rem;
+    transform: scale(0.95);
+  }
+
+  .registerPage-left{
+    width: 32rem;
+    height: 48rem;
+    margin-left: -9rem;
+    margin-top: 25rem;
+  }
+
+  .formWrapper {
+    font-size: 10pt;
+    margin-top: -1rem;
+    transform: scale(0.8);
+    margin-right: 2rem;
+  }
+  .formTitle {
+    margin-top: 1rem;
+    font-size: 16pt;
+    
+  }
+  .formTitle2 {
+    font-size: 12pt;
+  }
+
+  .canvas-left {
+    margin-left: 22rem;
+  }
+
+  .canvas-right {
+    margin-right: 4rem;
+  }
+}
+
+@media only screen and (min-width: 1440px) and (max-width: 1919px) {
+  .registerPage-root{
+    transform: scale(0.95);
+    margin-left: 2rem;
+    margin-top: 1rem;
+  }
+
+  .registerPage-left{
+    width: 32rem;
+    height: 48rem;
+    margin-left: -9rem;
+    margin-top: 25rem;
+  }
+
+  .formWrapper {
+    font-size: 10pt;
+    margin-top: -1rem;
+    transform: scale(0.8);
+    margin-right: 2rem;
+  }
+
+  .formTitle {
+    margin-top: 1rem;
+    font-size: 16pt;
+    
+  }
+  .formTitle2 {
+    font-size: 12pt;
+  }
+  .canvas-left {
+    margin-left: 22rem;
+  }
+
+  .canvas-right {
+    margin-right: 4rem;
+  }
+}
+
+/* Extra Large Screens (Desktops, TVs) */
+@media only screen and (min-width: 1920px) {
+  .registerPage-root{
+    transform: scale(0.9);
+    margin-left: 2.5rem;
+    margin-top: 1rem;
+   
+  }
+
+  .registerPage-left{
+    width: 35rem;
+    height: 60rem;
+    margin-left: -9rem;
+    margin-top: 21rem;
+  }
+
+  .formWrapper {
+    font-size: 10pt;
+    margin-top: -5rem;
+    transform: scale(0.85);
+    margin-right: 2rem;
+  }
+
+  .formTitle {
+    margin-top: 1rem;
+    font-size: 16pt;
+    
+  }
+  .formTitle2 {
+    font-size: 12pt;
+  }
+
+  .canvas-left {
+    margin-left: 22rem;
+  }
+
+  .canvas-right {
+    margin-right: 4rem;
+  }
+}
+
+
+/* Extra Large Screens (Desktops, TVs) */
+@media only screen and (min-width: 1921px) and (max-width: 2561px) {
+  .registerPage-root{
+    transform: scale(1);
+    margin-left: 2.5rem;
+    margin-top: 1rem;
+   
+  }
+
+  .registerPage-left{
+    width: 35rem;
+    height: 60rem;
+    margin-left: -9rem;
+    margin-top: 21rem;
+  }
+
+  .formWrapper {
+    font-size: 10pt;
+    margin-top: -5rem;
+    transform: scale(0.85);
+    margin-right: 2rem;
+  }
+
+  .formTitle {
+    margin-top: 1rem;
+    font-size: 16pt;
+    
+  }
+  .formTitle2 {
+    font-size: 12pt;
+  }
+
+  .canvas-left {
+    margin-left: 22rem;
+  }
+
+  .canvas-right {
+    margin-right: 4rem;
+  }
+}

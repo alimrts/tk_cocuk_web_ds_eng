@@ -1,0 +1,367 @@
+.navigation-register {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8rem;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 1),
+    rgba(154, 239, 239, 1)
+  );
+  box-shadow: 0 2px 8px 2px rgba(255, 255, 255, 0.5);
+}
+
+.navigationBlack-register{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  height: 8rem;
+  background: linear-gradient(
+    to top,
+    rgb(12, 3, 48),
+    rgb(0, 0, 0)
+  );
+  box-shadow: 0 2px 8px 2px rgba(255, 255, 255, 0.5);
+}
+
+
+.n-left-register {
+  display: flex;
+  align-items: flex-start;
+  margin-left: 10rem;
+  margin-top: -5rem;
+}
+
+.n-right-register {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -3rem;
+}
+
+
+.n-list-register ul {
+  margin: 0;
+  padding: 0;
+}
+
+.n-list-register li {
+  display: inline-block;
+}
+
+.navkuslar2 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 12rem;
+  height: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: -12rem;
+  margin-top: 4rem;
+}
+
+.navkuslar1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 14rem;
+  height: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 4rem;
+  margin-top: 4rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ///////// for media queries ///////// */ 
+
+/* Extra Small Devices (Portrait and Landscape) */
+@media only screen and (max-width: 319px) {
+  .navkuslar2 {
+    display: none;
+  }
+  .navkuslar1 {
+    display: none;
+  }
+  .navigation-register{
+    height: 7rem;
+    justify-content: center;
+   
+  }
+  .navigationBlack-register{
+    height: 7rem;
+    justify-content: center;
+  }
+
+  .n-left-register {
+    margin-top: -5.5rem;
+    margin-left: 8rem;
+    transform: scale(0.6);
+  }
+
+  .n-right-register {
+    margin-top: -3rem;
+    margin-left: 1rem;
+    transform: scale(0.8);
+  }
+}
+
+/* Mobile Phones (Portrait and Landscape) */
+@media only screen and (min-width: 320px) and (max-width: 374px) {
+  .navigation-register{
+    height: 7rem;
+    justify-content: center;
+   
+  }
+  .navigationBlack-register{
+    height: 7rem;
+    justify-content: center;
+  }
+
+  .n-left-register {
+    margin-top: -5.5rem;
+    margin-left: 8rem;
+    transform: scale(0.6);
+  }
+
+  .n-right-register {
+    margin-top: -3rem;
+    margin-left: 1rem;
+    transform: scale(0.8);
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 424px) {
+  .navigation-register{
+    height: 7rem;
+    justify-content: center;
+   
+  }
+  .navigationBlack-register{
+    height: 7rem;
+    justify-content: center;
+  }
+
+  .n-left-register {
+    margin-top: -5.5rem;
+    margin-left: 8rem;
+    transform: scale(0.6);
+  }
+
+  .n-right-register {
+    margin-top: -3rem;
+    margin-left: 3rem;
+    transform: scale(0.9);
+  }
+}
+
+@media only screen and (min-width: 425px) and (max-width: 600px) {
+  .navigation-register{
+    height: 7rem;
+    justify-content: center;
+   
+  }
+  .navigationBlack-register{
+    height: 7rem;
+    justify-content: center;
+  }
+
+  .n-left-register {
+    margin-top: -5.5rem;
+    margin-left: 9rem;
+    transform: scale(0.7);
+  }
+
+  .n-right-register {
+    margin-top: -3rem;
+    margin-left: 4rem;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 767px) {
+  .navigation-register{
+    height: 7rem;
+    justify-content: center;
+   
+  }
+  .navigationBlack-register{
+    height: 7rem;
+    justify-content: center;
+  }
+
+  .n-left-register {
+    margin-top: -5.5rem;
+    margin-left: 9rem;
+    transform: scale(0.7);
+  }
+
+  .n-right-register {
+    margin-top: -3rem;
+    margin-left: 4rem;
+  }
+}
+
+
+
+/* Tablets Portrait */
+@media only screen and (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
+  .navigation-register{
+    height: 7rem;
+    justify-content: center;
+   
+  }
+  .navigationBlack-register{
+    height: 7rem;
+    justify-content: center;
+  }
+
+  .n-left-register {
+    margin-top: -3.5rem;
+    margin-left: -5rem;
+    transform: scale(0.6);
+  }
+
+  .n-right-register {
+    margin-top: -2rem;
+  }
+}
+
+/* Tablets Landscape */
+@media only screen and (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+  .navigation-register{
+    height: 7rem;
+    justify-content: center;
+   
+  }
+  .navigationBlack-register{
+    height: 7rem;
+    justify-content: center;
+  }
+
+  .n-left-register {
+    margin-top: -3.5rem;
+    margin-left: -5rem;
+    transform: scale(0.6);
+  }
+
+  .n-right-register {
+    margin-top: -2rem;
+  }
+}
+
+/* Tablets and Small Desktops */
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  .navigation-register{
+    height: 7rem;
+    justify-content: center;
+   
+  }
+  .navigationBlack-register{
+    height: 7rem;
+    justify-content: center;
+  }
+
+  .n-left-register {
+    margin-top: -3.5rem;
+    margin-left: -5rem;
+    transform: scale(0.7);
+  }
+
+  .n-right-register {
+    margin-top: -2rem;
+  }
+}
+
+/* Large Screens (Desktops, Laptops) */
+@media only screen and (min-width: 1200px) and (max-width: 1439px) {
+
+  .navigation-register{
+    height: 7rem;
+    justify-content: center;
+   
+  }
+  .navigationBlack-register{
+    height: 7rem;
+    justify-content: center;
+  }
+
+  .n-left-register {
+    margin-top: -3.5rem;
+    margin-left: -5rem;
+    transform: scale(0.7);
+  }
+
+  .n-right-register {
+    margin-top: -2rem;
+  }
+ 
+}
+
+@media only screen and (min-width: 1440px) and (max-width: 1919px) {
+  .navigation-register{
+    height: 7rem;
+    justify-content: center;
+   
+  }
+  .navigationBlack-register{
+    height: 7rem;
+    justify-content: center;
+  }
+
+  .n-left-register {
+    margin-top: -3.5rem;
+    margin-left: -5rem;
+    transform: scale(0.7);
+  }
+
+  .n-right-register {
+    margin-top: -2rem;
+  }
+ 
+}
+
+/* Extra Large Screens (Desktops, TVs) */
+@media only screen and (min-width: 1920px) {
+  .navigation-register{
+    height: 8rem;
+    justify-content: space-between;
+   
+  }
+  .navigationBlack-register{
+    height: 8rem;
+    justify-content: space-between;
+  }
+
+  .n-right-register {
+    margin-top: -3rem;
+  }
+
+  .n-left-register {
+    margin-top: -5rem;
+  }
+
+}
+
