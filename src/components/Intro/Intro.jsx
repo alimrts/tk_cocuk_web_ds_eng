@@ -301,10 +301,18 @@ const Intro = (props) => {
                 yilYas={yilYas}
                 ayYas={ayYas}
                 gunYas={gunYas}
-                ayniIsimdeIlSayi={ayniIsimdeIlSayi.toLocaleString()}
-                ayniIsimdeTurkiyeSayi={ayniIsimdeTurkiyeSayi.toLocaleString()}
-                ayniTarihDoganIlSayi={ayniTarihDoganIlSayi.toLocaleString()}
-                ayniTarihDoganTurkiyeSayi={ayniTarihDoganTurkiyeSayi.toLocaleString()}
+                ayniIsimdeIlSayi={ayniIsimdeIlSayi
+                  .toLocaleString()
+                  .replace(/,/g, " ")}
+                ayniIsimdeTurkiyeSayi={ayniIsimdeTurkiyeSayi
+                  .toLocaleString()
+                  .replace(/,/g, " ")}
+                ayniTarihDoganIlSayi={ayniTarihDoganIlSayi
+                  .toLocaleString()
+                  .replace(/,/g, " ")}
+                ayniTarihDoganTurkiyeSayi={ayniTarihDoganTurkiyeSayi
+                  .toLocaleString()
+                  .replace(/,/g, " ")}
                 boyOrtancaDeger={boyOrtancaDeger}
                 kiloOrtancaDeger={kiloOrtancaDeger}
               />

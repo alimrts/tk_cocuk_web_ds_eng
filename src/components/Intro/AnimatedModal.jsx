@@ -109,20 +109,20 @@ export default function AnimatedModal(props) {
     " days old." +
     "\n" +
     "\n" +
-    "There is/are " +
+    "There are " +
     props.ayniIsimdeIlSayi +
     " people with your name in " +
     props.il +
-    " province and there is/are " +
+    " province and there are " +
     props.ayniIsimdeTurkiyeSayi +
     " in Türkiye." +
     "\n" +
     "\n" +
-    "There is/are " +
+    "There are " +
     props.ayniTarihDoganIlSayi +
     " people born on the same date as you in " +
     props.il +
-    " and there is/are " +
+    " and there are " +
     props.ayniTarihDoganTurkiyeSayi +
     " people in Türkiye." +
     "\n" +

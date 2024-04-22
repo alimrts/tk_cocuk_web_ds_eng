@@ -126,12 +126,12 @@ const IntroLeft = (props) => {
             {props.gunYas} days old.
             <br />
             <br />
-            There is/are {props.ayniIsimdeIlSayi} people with your name in{" "}
-            {props.il} province and <br /> there is/are{" "}
+            There are {props.ayniIsimdeIlSayi} people with your name in{" "}
+            {props.il} province and <br /> there are{" "}
             {props.ayniIsimdeTurkiyeSayi} in Türkiye.
             <br /> <br />
-            There is/are {props.ayniTarihDoganIlSayi} people born on the same
-            date as you in {props.il} <br /> and there is/are{" "}
+            There are {props.ayniTarihDoganIlSayi} people born on the same date
+            as you in {props.il} <br /> and there are{" "}
             {props.ayniTarihDoganTurkiyeSayi} people in Türkiye.
             <br />
             <br />
