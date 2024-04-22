@@ -285,7 +285,7 @@ const RegisterPage = () => {
                 zIndex: 2,
               }}
             >
-              Oynat
+              Play
             </button>
           ) : null}
         </>

@@ -257,7 +257,7 @@ const Intro = (props) => {
                 fontSize: "1.4rem",
               }}
             >
-              Wellcome to TurkStat Child Platform
+              Wellcome to TÜİK Çocuk Portal
             </span>
             <span
               style={{
