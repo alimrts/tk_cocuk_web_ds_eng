@@ -100,7 +100,7 @@ const RegisterPage = () => {
   const darkMode = theme.state.darkMode;
 
   useEffect(() => {
-    const storedLanguage = localStorage.getItem("selectedLanguage");
+    const storedLanguage = localStorage.getItem("selectedLanguageEng");
     if (storedLanguage) {
       setSelectedLanguage(storedLanguage);
     }
@@ -128,7 +128,7 @@ const RegisterPage = () => {
 
     //to remember which select value
     setSelectedLanguage(selectedLanguage);
-    localStorage.setItem("selectedLanguage", selectedLanguage);
+    localStorage.setItem("selectedLanguageEng", selectedLanguage);
   };
 
   const transitionOfBulut = {

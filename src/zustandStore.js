@@ -34,7 +34,7 @@ const zustandStore = (set) => ({
   /////////////
 
   language: "eng",
-  setLanguage: (selectedLanguage) => set({ language: selectedLanguage }),
+  setLanguage: (selectedLanguageEng) => set({ language: selectedLanguageEng }),
   languageData: {
     default: strings,
     eng: stringsEng,
