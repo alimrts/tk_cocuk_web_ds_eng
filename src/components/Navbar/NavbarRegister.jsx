@@ -23,7 +23,7 @@ const Navbar = () => {
   useEffect(() => {
     // const storedLanguage = localStorage.getItem("selectedLanguage");
     // if (storedLanguage) {
-    setSelectedLanguage("eng");
+    setSelectedLanguage("default");
     // }
   }, []);
 
@@ -34,7 +34,7 @@ const Navbar = () => {
     // //to remember which select value
     // setSelectedLanguage(selectedLanguage);
     // localStorage.setItem("selectedLanguage", selectedLanguage);
-    if (selectedLanguage === "default") {
+    if (selectedLanguage === "eng") {
       window.location.href = turkishURL;
     } else {
       setLanguage(selectedLanguage);
