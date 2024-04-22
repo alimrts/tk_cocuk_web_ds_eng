@@ -77,8 +77,8 @@ const Navbar = () => {
               onChange={(e) => handleLanguageChange(e.target.value)}
               style={{ color: "grey" }}
             >
-              <option value="default">Türkçe</option>
               <option value="eng">English</option>
+              <option value="default">Türkçe</option>
               {/* <option value="ger">Deutsch</option>
               <option value="french">Français</option>
               <option value="spanish">Española</option> */}
