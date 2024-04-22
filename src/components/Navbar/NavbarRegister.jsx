@@ -27,15 +27,15 @@ const Navbar = () => {
     // }
   }, []);
 
-  const englishhURL = process.env.REACT_APP_TURKISH_URL;
+  const turkishURL = process.env.REACT_APP_TURKISH_URL;
   const handleLanguageChange = (selectedLanguage) => {
     // setLanguage(selectedLanguage);
 
     // //to remember which select value
     // setSelectedLanguage(selectedLanguage);
     // localStorage.setItem("selectedLanguage", selectedLanguage);
-    if (selectedLanguage === "eng") {
-      window.location.href = englishhURL;
+    if (selectedLanguage === "default") {
+      window.location.href = turkishURL;
     } else {
       setLanguage(selectedLanguage);
       setSelectedLanguage(selectedLanguage);
