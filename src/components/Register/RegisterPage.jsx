@@ -37,7 +37,7 @@ function Loader() {
           color: "black",
         }}
       >
-        {Math.round(progress)} % yükleniyor
+        {Math.round(progress)} % loading
       </div>
     </Html>
   );
@@ -100,7 +100,7 @@ const RegisterPage = () => {
   const darkMode = theme.state.darkMode;
 
   useEffect(() => {
-    const storedLanguage = localStorage.getItem("selectedLanguageEng");
+    const storedLanguage = localStorage.getItem("selectedLanguage");
     if (storedLanguage) {
       setSelectedLanguage(storedLanguage);
     }
@@ -128,7 +128,7 @@ const RegisterPage = () => {
 
     //to remember which select value
     setSelectedLanguage(selectedLanguage);
-    localStorage.setItem("selectedLanguageEng", selectedLanguage);
+    localStorage.setItem("selectedLanguage", selectedLanguage);
   };
 
   const transitionOfBulut = {

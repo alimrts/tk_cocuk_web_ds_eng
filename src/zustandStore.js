@@ -34,7 +34,7 @@ const zustandStore = (set) => ({
   /////////////
 
   language: "eng",
-  setLanguage: (selectedLanguageEng) => set({ language: selectedLanguageEng }),
+  setLanguage: (selectedLanguage) => set({ language: selectedLanguage }),
   languageData: {
     default: strings,
     eng: stringsEng,
@@ -208,7 +208,7 @@ const useZustandStore = create(
   // to use localstorage
   devtools(
     persist(zustandStore, {
-      name: "zustandEng",
+      name: "zustand",
     })
   )
   // to not use localstorage
