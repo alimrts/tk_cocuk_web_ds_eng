@@ -208,7 +208,7 @@ const useZustandStore = create(
   // to use localstorage
   devtools(
     persist(zustandStore, {
-      name: "zustand",
+      name: "zustandEng",
     })
   )
   // to not use localstorage
