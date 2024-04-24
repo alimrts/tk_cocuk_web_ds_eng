@@ -214,4 +214,4 @@ export function Birds3(props) {
   );
 }
 
-useGLTF.preload("/models/birds3.glb");
+// useGLTF.preload("/models/birds3.glb");

@@ -205,4 +205,4 @@ export function Car1(props) {
   );
 }
 
-useGLTF.preload("./models/car1.glb");
+// useGLTF.preload("./models/car1.glb");

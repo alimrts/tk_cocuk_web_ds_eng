@@ -219,4 +219,4 @@ export function GezegenlerBinasi(props) {
   );
 }
 
-useGLTF.preload("/models/gezegenler_binasi.glb");
+// useGLTF.preload("/models/gezegenler_binasi.glb");

@@ -285,4 +285,4 @@ export function KontrolOdasi(props) {
     </group>
   );
 }
-useGLTF.preload("./models/kontrolodasi2.glb");
+// useGLTF.preload("./models/kontrolodasi2.glb");

@@ -105,9 +105,9 @@ export default function Ege({ mixer, actions }) {
   );
 }
 
-useGLTF.preload([
-  "./models/ege.glb",
-  "./models/ege_walking.glb",
-  "./models/ege_jump.glb",
-  "./models/ege_idle.glb",
-]);
+// useGLTF.preload([
+//   "./models/ege.glb",
+//   "./models/ege_walking.glb",
+//   "./models/ege_jump.glb",
+//   "./models/ege_idle.glb",
+// ]);

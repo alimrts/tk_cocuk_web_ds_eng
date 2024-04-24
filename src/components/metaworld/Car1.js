@@ -242,4 +242,4 @@ export function Car1(props) {
   );
 }
 
-useGLTF.preload("./models/car1anim.glb");
+// useGLTF.preload("./models/car1anim.glb");

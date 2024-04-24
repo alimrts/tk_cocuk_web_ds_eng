@@ -3824,4 +3824,4 @@ export function CityScene1(props) {
   );
 }
 
-useGLTF.preload("./models/city_c9_eng.glb");
+// useGLTF.preload("./models/city_c9_eng.glb");

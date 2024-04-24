@@ -171,9 +171,9 @@ export default function Ece({ mixer, actions }) {
   );
 }
 
-useGLTF.preload([
-  "./models/ece.glb",
-  "./models/ege_walking.glb",
-  "./models/ege_jump.glb",
-  "./models/ege_idle.glb",
-]);
+// useGLTF.preload([
+//   "./models/ece.glb",
+//   "./models/ege_walking.glb",
+//   "./models/ege_jump.glb",
+//   "./models/ege_idle.glb",
+// ]);

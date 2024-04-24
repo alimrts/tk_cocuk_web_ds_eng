@@ -96,4 +96,4 @@ export function TuikBinasi(props) {
   );
 }
 
-useGLTF.preload("/models/tuik_binasi.glb");
+// useGLTF.preload("/models/tuik_binasi.glb");
