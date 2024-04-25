@@ -203,44 +203,43 @@ const zustandStore = (set) => ({
     set({ isApiLoaded: false });
   },
 
-  ///dashboard
-  adi: null,
-  yilYas: null,
-  ayYas: null,
-  gunYas: null,
-  il: null,
-  ayniIsimdeIlSayi: null,
-  ayniIsimdeTurkiyeSayi: null,
-  ayniTarihDoganIlSayi: null,
-  ayniTarihDoganTurkiyeSayi: null,
-  boyOrtancaDeger: null,
-  kiloOrtancaDeger: null,
-  setDashboardData: ({
-    adi,
-    yilYas,
-    ayYas,
-    gunYas,
-    il,
-    ayniIsimdeIlSayi,
-    ayniIsimdeTurkiyeSayi,
-    ayniTarihDoganIlSayi,
-    ayniTarihDoganTurkiyeSayi,
-    boyOrtancaDeger,
-    kiloOrtancaDeger,
-  }) => {
-    set({
-      adi,
-      yilYas,
-      ayYas,
-      gunYas,
-      il,
-      ayniIsimdeIlSayi,
-      ayniIsimdeTurkiyeSayi,
-      ayniTarihDoganIlSayi,
-      ayniTarihDoganTurkiyeSayi,
-      boyOrtancaDeger,
-      kiloOrtancaDeger,
-    });
+  // Dashboard data
+  dashboardData: {
+    adi: null,
+    yilYas: null,
+    ayYas: null,
+    gunYas: null,
+    il: null,
+    ayniIsimdeIlSayi: null,
+    ayniIsimdeTurkiyeSayi: null,
+    ayniTarihDoganIlSayi: null,
+    ayniTarihDoganTurkiyeSayi: null,
+    boyOrtancaDeger: null,
+    kiloOrtancaDeger: null,
+  },
+  setDashboardData: (data) =>
+    set((state) => ({
+      dashboardData: {
+        ...state.dashboardData,
+        ...data,
+      },
+    })),
+  onCleanup: () => {
+    set((state) => ({
+      dashboardData: {
+        adi: null,
+        yilYas: null,
+        ayYas: null,
+        gunYas: null,
+        il: null,
+        ayniIsimdeIlSayi: null,
+        ayniIsimdeTurkiyeSayi: null,
+        ayniTarihDoganIlSayi: null,
+        ayniTarihDoganTurkiyeSayi: null,
+        boyOrtancaDeger: null,
+        kiloOrtancaDeger: null,
+      },
+    }));
   },
 });
 

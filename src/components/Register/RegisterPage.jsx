@@ -99,6 +99,8 @@ const RegisterPage = () => {
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
 
+  const setDashboardData = useZustandStore((state) => state.setDashboardData);
+
   useEffect(() => {
     const storedLanguage = localStorage.getItem("selectedLanguage");
     if (storedLanguage) {
@@ -107,13 +109,20 @@ const RegisterPage = () => {
   }, []);
 
   useEffect(() => {
-    const isFirstRun = localStorage.getItem("isFirstRun");
-    // If it's the first run, clear the localStorage
-    if (!isFirstRun) {
-      localStorage.clear();
-      // Set a flag in localStorage to indicate that the app has been run before
-      localStorage.setItem("isFirstRun", "true");
-    }
+    localStorage.clear();
+    setDashboardData({
+      adi: null,
+      yilYas: null,
+      ayYas: null,
+      gunYas: null,
+      il: null,
+      ayniIsimdeIlSayi: null,
+      ayniIsimdeTurkiyeSayi: null,
+      ayniTarihDoganIlSayi: null,
+      ayniTarihDoganTurkiyeSayi: null,
+      boyOrtancaDeger: null,
+      kiloOrtancaDeger: null,
+    });
   }, []);
 
   useEffect(() => {

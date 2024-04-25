@@ -70,4 +70,4 @@ export function BayrakTuik(props) {
   );
 }
 
-useGLTF.preload("/models/bayrak_tuik.glb");
+// useGLTF.preload("/models/bayrak_tuik.glb");

@@ -82,6 +82,8 @@ const Intro = (props) => {
 
   const setIsApiLoaded = useZustandStore((state) => state.setIsApiLoaded);
 
+  const setDashboardData = useZustandStore((state) => state.setDashboardData);
+
   const {
     setShowMetaverse,
     ad,
@@ -221,20 +223,23 @@ const Intro = (props) => {
   //     });
   // };
   const {
-    adi,
-    yilYas,
-    ayYas,
-    gunYas,
-    il,
-    ayniIsimdeIlSayi,
-    ayniIsimdeTurkiyeSayi,
-    ayniTarihDoganIlSayi,
-    ayniTarihDoganTurkiyeSayi,
-    boyOrtancaDeger,
-    kiloOrtancaDeger,
+    dashboardData: {
+      adi,
+      yilYas,
+      ayYas,
+      gunYas,
+      il,
+      ayniIsimdeIlSayi,
+      ayniIsimdeTurkiyeSayi,
+      ayniTarihDoganIlSayi,
+      ayniTarihDoganTurkiyeSayi,
+      boyOrtancaDeger,
+      kiloOrtancaDeger,
+    },
   } = useZustandStore();
 
   const getInfo = () => {
+    // console.log("get info calisti.. yilYas: ", yilYas);
     if (
       adi === null ||
       yilYas === null ||
@@ -251,6 +256,7 @@ const Intro = (props) => {
       // Proceed with Axios request to fetch data from the API
       axios
         .get(process.env.REACT_APP_PROXY_URL + "/dashboard", {
+          // .get("http://localhost:3001" + "/dashboard", {
           params: {
             Ad: ad,
             gun: dogumGunu,
@@ -266,7 +272,7 @@ const Intro = (props) => {
           console.log("Dashboard data:", dashboardResponse.data);
 
           if (dashboardResponse.data.Ad === undefined) {
-            useZustandStore.setState((state) => ({
+            setDashboardData((state) => ({
               ...state,
               adi: "---",
               yilYas: 0,
@@ -286,7 +292,7 @@ const Intro = (props) => {
               loading: true,
             });
           } else {
-            useZustandStore.setDashboardData({
+            setDashboardData({
               adi: dashboardResponse.data.Ad,
               yilYas: dashboardResponse.data.Yil,
               ayYas: dashboardResponse.data.Ay,
