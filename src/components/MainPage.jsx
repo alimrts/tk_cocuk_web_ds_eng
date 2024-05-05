@@ -49,19 +49,19 @@ const MainPage = () => {
     setShowMetaverse(true);
     handleBilgiGateTrigger();
 
-    const element = document.documentElement;
-    if (element.requestFullscreen) {
-      element.requestFullscreen();
-    } else if (element.mozRequestFullScreen) {
-      /* Firefox */
-      element.mozRequestFullScreen();
-    } else if (element.webkitRequestFullscreen) {
-      /* Chrome, Safari & Opera */
-      element.webkitRequestFullscreen();
-    } else if (element.msRequestFullscreen) {
-      /* IE/Edge */
-      element.msRequestFullscreen();
-    }
+    // const element = document.documentElement;
+    // if (element.requestFullscreen) {
+    //   element.requestFullscreen();
+    // } else if (element.mozRequestFullScreen) {
+    //   /* Firefox */
+    //   element.mozRequestFullScreen();
+    // } else if (element.webkitRequestFullscreen) {
+    //   /* Chrome, Safari & Opera */
+    //   element.webkitRequestFullscreen();
+    // } else if (element.msRequestFullscreen) {
+    //   /* IE/Edge */
+    //   element.msRequestFullscreen();
+    // }
   };
 
   const { userInfo } = useZustandStore();

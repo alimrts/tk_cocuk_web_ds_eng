@@ -75,12 +75,12 @@ export default function AnimatedModal(props) {
 
   if (typeof props?.boyOrtancaDeger === "number") {
     if (props?.boyOrtancaDeger < 0) {
-      boyMessage = "altında.";
+      boyMessage = "below.";
     } else {
-      boyMessage = "üstünde.";
+      boyMessage = "above.";
     }
   } else {
-    boyMessage = "tam ortanca değerde.";
+    boyMessage = "on.";
   }
 
   let kiloMessage = "";
@@ -96,7 +96,7 @@ export default function AnimatedModal(props) {
       kiloMessage = "above";
     }
   } else {
-    kiloMessage = "tam ortanca değerde.";
+    kiloMessage = "on.";
   }
 
   const fullText =
@@ -162,7 +162,7 @@ export default function AnimatedModal(props) {
     text3Top: 160,
     text3Width: 280,
     text4Left: 500,
-    text4Top: 420,
+    text4Top: 450,
   });
 
   const classes = useStyles();
@@ -246,7 +246,7 @@ export default function AnimatedModal(props) {
         text1Top: 150,
         text2Left: 320,
         text2Top: 200,
-        text3Left: 180,
+        text3Left: 140,
         text3Top: 240,
         text3Width: 420,
         text4Left: 410,
@@ -354,7 +354,7 @@ export default function AnimatedModal(props) {
             <h2
               style={{ textAlign: "center", fontSize: "12pt", color: "orange" }}
             >
-              Sertifikalar
+              Certificates
             </h2>
             <div>
               <button

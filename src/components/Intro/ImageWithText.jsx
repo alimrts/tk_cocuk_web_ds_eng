@@ -56,7 +56,7 @@ const ImageWithText = ({
           newCanvas.add(fabricImg);
 
           // Add the first text object to the canvas
-          const fabricText1 = new fabric.Text("Sevgili", {
+          const fabricText1 = new fabric.Text("Dear", {
             selectable: false,
             left: text1Left,
             top: text1Top,

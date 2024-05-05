@@ -291,6 +291,12 @@ const UserRegister = ({ onSubmit, onGenderChange }) => {
 
     setContainsRestrictedText(isBlacklisted);
 
+    if (value.length < 2) {
+      setContainsRestrictedText(true);
+    } else {
+      setContainsRestrictedText(false);
+    }
+
     setFormData((prevFormData) => ({
       ...prevFormData,
       [name]: value,
@@ -311,34 +317,6 @@ const UserRegister = ({ onSubmit, onGenderChange }) => {
     setGender(event.target.value);
     onGenderChange(event.target.value);
   };
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-
-  //   // Check for empty fields
-  //   const errors = {};
-  //   Object.keys(formData).forEach((key) => {
-  //     if (!formData[key]) {
-  //       errors[key] = true;
-  //     }
-  //   });
-  //   setFormErrors(errors);
-  //   const formFields = Object.values(formData);
-  //   const hasEmptyFields = formFields.some((field) => field === ""); // check for empty fields
-  //   if (hasEmptyFields) {
-  //     // alert(strings.registerPageLutfenGerekliBilgiler);
-  //     setShowAlert(true); // Show the alert
-  //     return;
-  //   }
-
-  //   // Submit form if there are no errors
-  //   if (Object.keys(errors).length === 0) {
-  //     // Submit form
-  //     console.log("Form submitted:", formData);
-  //   }
-
-  //   onSubmit(formData);
-  // };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -368,7 +346,7 @@ const UserRegister = ({ onSubmit, onGenderChange }) => {
       }
       return false;
     });
-    if (containsBlacklistedWord) {
+    if (containsBlacklistedWord || containsRestrictedText) {
       setShowAlertRestricted(true);
       return;
     }

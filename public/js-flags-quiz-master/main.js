@@ -140,7 +140,7 @@ function check() {
   } else {
     amtIncorrect++;
     get("cevap").innerHTML =
-      "<span style='color: red; font-size:2.5rem;'>Yanlış!</span><br/>Correct answer: " +
+      "<span style='color: red; font-size:2.5rem;'>Wrong!</span><br/>Correct answer: " +
       correct.name;
     get(`option${correctOption}label`).style.backgroundColor = "#2ecc71";
     get(

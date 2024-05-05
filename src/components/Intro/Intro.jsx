@@ -101,19 +101,19 @@ const Intro = (props) => {
     setPlayerPosition([0, 0, 0]);
     setShowMetaverse(true);
 
-    const element = document.documentElement;
-    if (element.requestFullscreen) {
-      element.requestFullscreen();
-    } else if (element.mozRequestFullScreen) {
-      /* Firefox */
-      element.mozRequestFullScreen();
-    } else if (element.webkitRequestFullscreen) {
-      /* Chrome, Safari & Opera */
-      element.webkitRequestFullscreen();
-    } else if (element.msRequestFullscreen) {
-      /* IE/Edge */
-      element.msRequestFullscreen();
-    }
+    // const element = document.documentElement;
+    // if (element.requestFullscreen) {
+    //   element.requestFullscreen();
+    // } else if (element.mozRequestFullScreen) {
+    //   /* Firefox */
+    //   element.mozRequestFullScreen();
+    // } else if (element.webkitRequestFullscreen) {
+    //   /* Chrome, Safari & Opera */
+    //   element.webkitRequestFullscreen();
+    // } else if (element.msRequestFullscreen) {
+    //   /* IE/Edge */
+    //   element.msRequestFullscreen();
+    // }
   };
 
   const handleButtonClickForDunya = () => {
@@ -125,103 +125,16 @@ const Intro = (props) => {
 
   const [state, setState] = useState({
     loading: false,
-    // adi: "",
-    // yilYas: 0,
-    // ayYas: 0,
-    // gunYas: 0,
-    // il: "",
-    // ayniIsimdeIlSayi: 10000,
-    // ayniIsimdeTurkiyeSayi: 10000,
-    // ayniTarihDoganIlSayi: 10000,
-    // ayniTarihDoganTurkiyeSayi: 10000,
-    // boyOrtancaDeger: 0,
-    // kiloOrtancaDeger: 0,
+
     apiError: false,
   });
 
   const {
     loading,
-    // adi,
-    // yilYas,
-    // ayYas,
-    // gunYas,
-    // il,
-    // ayniIsimdeIlSayi,
-    // ayniIsimdeTurkiyeSayi,
-    // ayniTarihDoganIlSayi,
-    // ayniTarihDoganTurkiyeSayi,
-    // boyOrtancaDeger,
-    // kiloOrtancaDeger,
+
     apiError,
   } = state;
 
-  // const getInfo = () => {
-  //   axios
-  //     .get(process.env.REACT_APP_PROXY_URL + "/dashboard", {
-  //       params: {
-  //         Ad: ad,
-  //         gun: dogumGunu,
-  //         ay: dogumAyi,
-  //         dogumyil: dogumYili,
-  //         boy: boy,
-  //         kilo: kilo,
-  //         ilKodu: sehir,
-  //         cinsiyet: cinsiyet,
-  //       },
-  //     })
-  //     .then((dashboardResponse) => {
-  //       console.log("Dashboard data:", dashboardResponse.data);
-  //       console.log(
-  //         "Dashboard data test AyniIsimdeIlSayi:",
-  //         dashboardResponse.data.AyniIsimdeIlSayi
-  //       );
-
-  //       if (dashboardResponse.data.Ad === undefined) {
-  //         setState({
-  //           ...state,
-
-  //           loading: true,
-  //           adi: "---",
-  //           yilYas: 0,
-  //           ayYas: 0,
-  //           gunYas: 0,
-  //           il: "---",
-  //           ayniIsimdeIlSayi: 0,
-  //           ayniIsimdeTurkiyeSayi: 0,
-  //           ayniTarihDoganIlSayi: 0,
-  //           ayniTarihDoganTurkiyeSayi: 0,
-  //           boyOrtancaDeger: 0,
-  //           kiloOrtancaDeger: 0,
-  //         });
-  //       } else {
-  //         setState({
-  //           ...state,
-  //           adi: dashboardResponse.data.Ad,
-  //           yilYas: dashboardResponse.data.Yil,
-  //           ayYas: dashboardResponse.data.Ay,
-  //           gunYas: dashboardResponse.data.Gun,
-  //           il: dashboardResponse.data.Il,
-  //           ayniIsimdeIlSayi: dashboardResponse.data.AyniIsimdeIlSayi,
-  //           ayniIsimdeTurkiyeSayi: dashboardResponse.data.AyniIsimdeTurkiyeSayi,
-  //           ayniTarihDoganIlSayi: dashboardResponse.data.AyniTarihDoganIlSayi,
-  //           ayniTarihDoganTurkiyeSayi:
-  //             dashboardResponse.data.AyniTarihDoganTurkiyeSayi,
-  //           boyOrtancaDeger: dashboardResponse.data.BoyOrtancaDeger,
-  //           kiloOrtancaDeger: dashboardResponse.data.KiloOrtancaDeger,
-  //           loading: true,
-  //         });
-  //         setIsApiLoaded(true);
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error getting dashboard data:", error);
-  //       setState({
-  //         ...state,
-  //         apiError: true,
-  //         loading: true,
-  //       });
-  //     });
-  // };
   const {
     dashboardData: {
       adi,
@@ -395,7 +308,7 @@ const Intro = (props) => {
               color: "gray",
             }}
           >
-            {apiError ? (
+            {!apiError ? (
               <LoadingIntroApiError />
             ) : !loading ? (
               <LoadingIntro />

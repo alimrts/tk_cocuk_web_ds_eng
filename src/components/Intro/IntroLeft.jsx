@@ -1,8 +1,8 @@
 import React from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Html, useProgress } from "@react-three/drei";
-import ModelChar from "./ModelChar";
-import ModelCharEge from "./ModelCharEge";
+
+import ModelCharMod from "./ModelCharMod";
 import { Suspense } from "react";
 import "./Intro.css";
 
@@ -78,12 +78,12 @@ const IntroLeft = (props) => {
         >
           <ambientLight intensity={1.25} />
 
-          <directionalLight intensity={0.4} />
+          <directionalLight intensity={0.8} />
           <Suspense fallback={<Loader />}>
             {isMale ? (
-              <ModelCharEge position={[-0.1, -0.9, 1]} rotation={[0, -60, 0]} />
+              <ModelCharMod position={[-0.1, -0.9, 1]} rotation={[0, -60, 0]} />
             ) : (
-              <ModelChar position={[-0.1, -0.9, 1]} rotation={[0, -60, 0]} />
+              <ModelCharMod position={[-0.1, -0.9, 1]} rotation={[0, -60, 0]} />
             )}
           </Suspense>
           <OrbitControls
@@ -165,7 +165,7 @@ const IntroLeft = (props) => {
               }}
             >
               {" "}
-              {props.boy} cm
+              <b>{props.boy} cm</b>
             </span>
           </span>
         </div>
@@ -188,7 +188,7 @@ const IntroLeft = (props) => {
               }}
             >
               {" "}
-              {props.kilo} kg
+              <b>{props.kilo} kg</b>
             </span>
           </span>
         </div>
