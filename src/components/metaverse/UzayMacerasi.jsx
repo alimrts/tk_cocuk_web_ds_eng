@@ -35,14 +35,15 @@ function UzayMacerasi({ closeTheGame }) {
             background: "lightGrey",
           }}
         >
-          <p>Yükleniyor... {Math.round(loadingProgression * 100)}%</p>
+          <p>Loading... {Math.round(loadingProgression * 100)}%</p>
         </div>
       )}
       <Unity
         unityProvider={unityProvider}
+        className="spaceAdventure"
         style={{
-          width: 420,
-          height: 747,
+          // width: 420,
+          // height: 747,
           visibility: isLoaded ? "visible" : "hidden",
         }}
       />

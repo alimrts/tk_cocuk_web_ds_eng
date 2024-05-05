@@ -31,14 +31,15 @@ function ArabaYarisi({ closeTheGame }) {
     <>
       {!isLoaded && (
         <div style={{ color: "black", backgroundColor: "lightgray" }}>
-          <p>Yükleniyor... {Math.round(loadingProgression * 100)}%</p>
+          <p>Loading... {Math.round(loadingProgression * 100)}%</p>
         </div>
       )}
       <Unity
         unityProvider={unityProvider}
+        className="superCar"
         style={{
-          width: 480,
-          height: 854,
+          // width: 480,
+          // height: 854,
           visibility: isLoaded ? "visible" : "hidden",
         }}
       />
