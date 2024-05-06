@@ -79,7 +79,6 @@
 .floatingDivForMenuAlt > img {
   transform: scale(0.8);
 }
-/* ----- */
 
 
 
@@ -100,6 +99,8 @@
   transform: scale(0.8);
 }
 
+
+
 /* Media query for mobile devices */
 @media (max-width: 767px) {
   .floatingDivForMenu {
@@ -112,6 +113,12 @@
 
   .floatingDivForIntroRight {
     transform: scale(0.6);
+  }
+
+  .floatingDivForIntroRight:hover {
+    transform: scale(0.65);
+  
+    filter: saturate(200%) brightness(100%);
   }
 
   .floatingDivForLogo {
