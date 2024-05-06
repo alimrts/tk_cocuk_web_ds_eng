@@ -197,6 +197,7 @@ export default function MemoryGame() {
 
   return (
     <div
+      className="memory"
       style={{
         color: "black",
         display: "flex",
@@ -227,6 +228,7 @@ export default function MemoryGame() {
                   </div>
                 </div>
                 <div
+                  className="memory"
                   style={{
                     color: "black",
                     display: "flex",

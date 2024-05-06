@@ -62,6 +62,7 @@ const UlkelerBayrak = () => {
       {loading ? (
         // Render a loader while the content is loading
         <div
+          className="ulkeBayrak"
           style={{
             color: "black",
             display: "flex",
@@ -85,6 +86,7 @@ const UlkelerBayrak = () => {
       ) : (
         // Render the content once loading is complete
         <div
+          className="ulkeBayrak"
           style={{
             display: "flex",
             justifyContent: "center",
