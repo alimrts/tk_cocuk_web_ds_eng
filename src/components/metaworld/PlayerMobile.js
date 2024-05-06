@@ -1,13 +1,12 @@
-import { useMemo, useRef, useEffect } from "react";
+import { useMemo, useRef } from "react";
 import { Vector3, Euler, Quaternion, Matrix4, AnimationMixer } from "three";
-
 import Mod from "./Mod";
 import { useCompoundBody } from "@react-three/cannon";
-import useKeyboard from "./useKeyboard";
 import { useFrame } from "@react-three/fiber";
 import { Vec3 } from "cannon-es";
 import useFollowCam from "./useFollowCam";
 import useZustandStore from "../../zustandStore";
+import useJoystick from "./useJoystick";
 
 export default function PlayerCollider(props) {
   const isAnyGameOpened = useZustandStore((state) => state.isAnyGameOpened);
@@ -29,7 +28,9 @@ export default function PlayerCollider(props) {
   const mixer = useMemo(() => new AnimationMixer(), []);
   const actions = {};
 
-  const keyboard = useKeyboard();
+  const buttonMap = useJoystick();
+
+  //   console.log("buttonMap: ", JSON.stringify(buttonMap));
 
   const [ref, body] = useCompoundBody(
     () => ({
@@ -93,73 +94,21 @@ export default function PlayerCollider(props) {
     if (!isAnyGameOpened) {
       inputVelocity.set(0, 0, 0);
 
-      if (keyboard["KeyW"] || keyboard["ArrowUp"]) {
+      // Use buttonMap state instead of keyboard state
+      if (buttonMap?.["up"]) {
         inputVelocity.z = -10 * delta;
-        // console.log("delta: ", delta);
-        // console.log("group.current.position: ", group.current.position);
       }
-      if (keyboard["KeyS"] || keyboard["ArrowDown"]) {
+      if (buttonMap?.["down"]) {
         inputVelocity.z = 10 * delta;
       }
-      if (keyboard["KeyA"] || keyboard["ArrowLeft"]) {
+      if (buttonMap?.["left"]) {
         inputVelocity.x = -10 * delta;
       }
-      if (keyboard["KeyD"] || keyboard["ArrowRight"]) {
+      if (buttonMap?.["right"]) {
         inputVelocity.x = 10 * delta;
       }
 
-      /////
-      if (keyboard["KeyW"] && keyboard["KeyA"]) {
-        inputVelocity.z = (-10 * delta) / 1.5;
-        inputVelocity.x = (-10 * delta) / 1.5;
-      }
-      /////
-      /////
-      if (keyboard["KeyW"] && keyboard["KeyD"]) {
-        inputVelocity.z = (-10 * delta) / 1.5;
-        inputVelocity.x = (10 * delta) / 1.5;
-      }
-      /////
-      /////
-      if (keyboard["KeyS"] && keyboard["KeyA"]) {
-        inputVelocity.z = (10 * delta) / 1.5;
-        inputVelocity.x = (-10 * delta) / 1.5;
-      }
-      /////
-      /////
-      if (keyboard["KeyS"] && keyboard["KeyD"]) {
-        inputVelocity.z = (10 * delta) / 1.5;
-        inputVelocity.x = (10 * delta) / 1.5;
-      }
-      /////
-      //////////////////
-      /////
-      if (keyboard["ArrowUp"] && keyboard["ArrowLeft"]) {
-        inputVelocity.z = (-10 * delta) / 1.5;
-        inputVelocity.x = (-10 * delta) / 1.5;
-      }
-      /////
-      /////
-      if (keyboard["ArrowUp"] && keyboard["ArrowRight"]) {
-        inputVelocity.z = (-10 * delta) / 1.5;
-        inputVelocity.x = (10 * delta) / 1.5;
-      }
-      /////
-      /////
-      if (keyboard["ArrowDown"] && keyboard["ArrowLeft"]) {
-        inputVelocity.z = (10 * delta) / 1.5;
-        inputVelocity.x = (-10 * delta) / 1.5;
-      }
-      /////
-      /////
-      if (keyboard["ArrowDown"] && keyboard["ArrowRight"]) {
-        inputVelocity.z = (10 * delta) / 1.5;
-        inputVelocity.x = (10 * delta) / 1.5;
-      }
-      /////
-      //////////////////
-
-      if (keyboard["Space"]) {
+      if (buttonMap["space"]) {
         if (canJump.current) {
           canJump.current = false;
           inputVelocity.y = 9;

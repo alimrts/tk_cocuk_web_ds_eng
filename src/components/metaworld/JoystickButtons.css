@@ -21,7 +21,7 @@
 }
 
 .joystick-buttons button img {
-  width: 50px; 
+  width: 80px; 
   height: auto;
 }
 .leftButtonNav,
@@ -29,24 +29,24 @@
 .upButtonNav,
 .downButtonNav {
   position: absolute;
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   cursor: pointer;
 }
 
 .leftButtonNav {
-  left: calc(50% - 85px);
+  left: calc(50% - 105px);
   bottom: 10px;
 }
 
 .rightButtonNav {
-  left: calc(50% + 35px);
+  left: calc(50% + 55px);
   bottom: 10px;
 }
 
 .upButtonNav {
   left: calc(50% - 25px);
-  bottom: 70px;
+  bottom: 90px;
 }
 
 .downButtonNav {

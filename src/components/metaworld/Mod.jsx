@@ -82,10 +82,3 @@ export default function Mod({ mixer, actions }) {
     </group>
   );
 }
-
-// useGLTF.preload([
-//   "./models/ege.glb",
-//   "./models/ege_walking.glb",
-//   "./models/ege_jump.glb",
-//   "./models/ege_idle.glb",
-// ]);

@@ -293,19 +293,6 @@ export default function Game(props) {
         }}
       />
 
-      <Player
-        position={
-          isGeriClickedInSolarSystem
-            ? [0.5, 0, 60.5]
-            : isGeriClickedInTuik
-            ? [-50.5, 0, 28.7]
-            : playerPosition
-        }
-        linearDamping={0.95}
-        material={"slippery"}
-        cinsiyet={cinsiyet}
-      />
-
       {/* </ToggleDebug> */}
     </>
   );

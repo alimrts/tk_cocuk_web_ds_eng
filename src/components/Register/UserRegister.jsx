@@ -21,7 +21,7 @@ import blacklist from "./blacklist.json";
 
 const cities = citiesImport[0];
 const lowerLimit = 1900;
-const currentYear = new Date().getFullYear();
+const currentYear = new Date().getFullYear() - 1;
 
 const years = Array.from(
   { length: currentYear - lowerLimit + 1 },
