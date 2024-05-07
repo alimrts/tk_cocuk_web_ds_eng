@@ -76,14 +76,20 @@ const IntroLeft = (props) => {
             //   "0 4px 8px 0 rgba(200, 200, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
           }}
         >
-          <ambientLight intensity={1.25} />
+          <ambientLight intensity={1.2} />
 
-          <directionalLight intensity={0.8} />
+          <directionalLight intensity={1.5} />
           <Suspense fallback={<Loader />}>
             {isMale ? (
-              <ModelCharMod position={[-0.1, -0.9, 1]} rotation={[0, -60, 0]} />
+              <ModelCharMod
+                position={[-0.15, -0.9, 1]}
+                rotation={[-0.1, -60.5, 0]}
+              />
             ) : (
-              <ModelCharMod position={[-0.1, -0.9, 1]} rotation={[0, -60, 0]} />
+              <ModelCharMod
+                position={[-0.15, -0.9, 1]}
+                rotation={[-0.1, -60.5, 0]}
+              />
             )}
           </Suspense>
           <OrbitControls
@@ -92,8 +98,8 @@ const IntroLeft = (props) => {
             rotateSpeed={0.5}
             maxPolarAngle={1.45}
             minPolarAngle={1.44}
-            maxAzimuthAngle={0.05}
-            minAzimuthAngle={-0.05}
+            maxAzimuthAngle={0.15}
+            minAzimuthAngle={-0.15}
           />
         </Canvas>
       </div>

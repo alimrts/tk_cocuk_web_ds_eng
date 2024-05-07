@@ -30,6 +30,14 @@ export default function PlayerCollider(props) {
 
   const buttonMap = useJoystick();
 
+  const isGameCenterButton = useZustandStore(
+    (state) => state.isGameCenterButton
+  );
+
+  const setIsGameCenterButton = useZustandStore(
+    (state) => state.setIsGameCenterButton
+  );
+
   //   console.log("buttonMap: ", JSON.stringify(buttonMap));
 
   const [ref, body] = useCompoundBody(
@@ -60,6 +68,13 @@ export default function PlayerCollider(props) {
   );
 
   useFrame((_, delta) => {
+    if (isGameCenterButton) {
+      // Reset player position to (0, 0, 0)
+      body.position.set(0, 0, 0);
+      body.velocity.set(0, 0, 0);
+
+      setIsGameCenterButton(false);
+    }
     body.angularFactor.set(0, 0, 0);
 
     ref.current.getWorldPosition(worldPosition);

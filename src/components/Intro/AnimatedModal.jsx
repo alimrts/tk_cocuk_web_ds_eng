@@ -499,7 +499,7 @@ export default function AnimatedModal(props) {
                 text={capitalizedStr}
                 fullText={fullText}
                 fontColor={isMale ? "#0099ff" : "#ff0080"}
-                fontFamily="Bradley Hand, cursive, sans-serif"
+                fontFamily="Noteworthy-Bold"
                 text1Left={textPositions.text1Left}
                 text1Top={textPositions.text1Top}
                 text2Left={textPositions.text2Left}

@@ -42,7 +42,7 @@ const ImageWithText = ({
     const img = new Image();
 
     const options = { year: "numeric", month: "long", day: "numeric" };
-    const today = new Date().toLocaleDateString("tr", options);
+    const today = new Date().toLocaleDateString("en", options);
 
     img.onload = () => {
       if (!canvasInitialized && canvasRef.current) {
@@ -97,7 +97,7 @@ const ImageWithText = ({
           newCanvas.add(fabricText3);
 
           // Add the fourth text object to the canvas
-          const fabricText4 = new fabric.Text("Tarih: " + today, {
+          const fabricText4 = new fabric.Text("Date: " + today, {
             selectable: false,
             left: text4Left,
             top: text4Top,
@@ -177,7 +177,7 @@ const ImageWithText = ({
             }}
             onClick={handleDownload}
           >
-            İndir
+            Download
           </button>
         </>
       )}

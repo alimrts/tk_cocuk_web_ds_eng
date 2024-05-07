@@ -18,7 +18,6 @@ export default function Mod({ mixer, actions }) {
     actions["jump"].clampWhenFinished = true;
 
     actions["idle"] = mixer.clipAction(idleAnimation[0], ref.current);
-
     actions["walk"].play();
   });
 

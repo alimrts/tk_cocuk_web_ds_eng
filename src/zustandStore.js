@@ -172,6 +172,14 @@ const zustandStore = (set) => ({
     set({ showDergi: false });
   },
 
+  ////
+  isGameCenterButton: false,
+  setIsGameCenterButton: (value) => set({ isGameCenterButton: value }),
+  onCleanup: () => {
+    set({ isGameCenterButton: false });
+  },
+  ////
+
   isApiLoaded: false,
   setIsApiLoaded: (value) => set({ isApiLoaded: value }),
   onCleanup: () => {

@@ -308,7 +308,7 @@ const Intro = (props) => {
               color: "gray",
             }}
           >
-            {apiError ? (
+            {!apiError ? (
               <LoadingIntroApiError />
             ) : !loading ? (
               <LoadingIntro />

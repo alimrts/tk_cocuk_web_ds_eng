@@ -31,6 +31,14 @@ export default function PlayerCollider(props) {
 
   const keyboard = useKeyboard();
 
+  const isGameCenterButton = useZustandStore(
+    (state) => state.isGameCenterButton
+  );
+
+  const setIsGameCenterButton = useZustandStore(
+    (state) => state.setIsGameCenterButton
+  );
+
   const [ref, body] = useCompoundBody(
     () => ({
       mass: 1,
@@ -59,6 +67,14 @@ export default function PlayerCollider(props) {
   );
 
   useFrame((_, delta) => {
+    if (isGameCenterButton) {
+      // Reset player position to (0, 0, 0)
+      body.position.set(0, 0, 0);
+      body.velocity.set(0, 0, 0);
+
+      setIsGameCenterButton(false);
+    }
+
     body.angularFactor.set(0, 0, 0);
 
     ref.current.getWorldPosition(worldPosition);
@@ -73,7 +89,6 @@ export default function PlayerCollider(props) {
     }
 
     const rotationMatrix = new Matrix4();
-
     rotationMatrix.lookAt(
       worldPosition,
       group.current.position,
