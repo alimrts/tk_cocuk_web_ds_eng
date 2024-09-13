@@ -5,7 +5,8 @@ import { themeContext } from "../../Context";
 
 import WrapperComponent from "../WrapperComponent";
 import NavbarRegister from "../../components/Navbar/NavbarCocukSdg";
-import sdgData from "../../sdgData.json";
+import sdgData from "./sdgData.json";
+import texts from "./texts_sdg.json";
 
 const Sdg = () => {
   // context
@@ -24,11 +25,11 @@ const Sdg = () => {
       <NavbarRegister />
       <div className="sdg">
         <div className="t-heading-sdg ">
-          <span>What are</span>
-          <span> Sustainable Development Goals?</span>
+          <span>{texts.textHeader1}</span>
+          <span> {texts.textHeader2}</span>
           <span style={{ fontSize: "14pt" }}>
             <br />
-            Click on the cards for explanations.
+            {texts.textAciklama}
           </span>
         </div>
 

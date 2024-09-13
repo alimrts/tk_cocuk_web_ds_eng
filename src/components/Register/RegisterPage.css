@@ -83,7 +83,7 @@
   align-items: center;
   margin-bottom: 1rem;
   font-size: 12pt;
-  width: 16rem;
+  width: 12rem;
 }
 
 .footer-image{
@@ -460,7 +460,7 @@
 
   .formWrapper {
     font-size: 10pt;
-    margin-top: -5rem;
+    margin-top: -2rem;
     transform: scale(0.85);
     margin-right: 2rem;
   }
@@ -502,7 +502,7 @@
 
   .formWrapper {
     font-size: 10pt;
-    margin-top: -5rem;
+    margin-top: -2rem;
     transform: scale(0.85);
     margin-right: 2rem;
   }

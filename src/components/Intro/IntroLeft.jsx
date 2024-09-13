@@ -5,6 +5,7 @@ import { OrbitControls, Html, useProgress } from "@react-three/drei";
 import ModelCharMod from "./ModelCharMod";
 import { Suspense } from "react";
 import "./Intro.css";
+import texts from "./texts_intro.json";
 
 function Loader() {
   const { progress } = useProgress();
@@ -17,7 +18,7 @@ function Loader() {
           color: "black",
         }}
       >
-        {Math.round(progress)} % loading
+        {Math.round(progress)} {texts.yukleniyor}
       </div>
     </Html>
   );
@@ -35,10 +36,12 @@ const IntroLeft = (props) => {
 
   if (typeof props?.boyOrtancaDeger === "number") {
     if (props?.boyOrtancaDeger < 0) {
-      boyMessage = "below";
+      boyMessage = texts.altMessage;
     } else {
-      boyMessage = "above";
+      boyMessage = texts.ustMessage;
     }
+  } else {
+    boyMessage = texts.tamMessage;
   }
 
   let kiloMessage = "";
@@ -49,10 +52,12 @@ const IntroLeft = (props) => {
 
   if (typeof props?.kiloOrtancaDeger === "number") {
     if (props?.kiloOrtancaDeger < 0) {
-      kiloMessage = "below";
+      kiloMessage = texts.altMessage;
     } else {
-      kiloMessage = "above";
+      kiloMessage = texts.ustMessage;
     }
+  } else {
+    kiloMessage = texts.tamMessage;
   }
 
   return (
@@ -128,25 +133,22 @@ const IntroLeft = (props) => {
         >
           {" "}
           <span className="introleft-text">
-            As of today, you are {props.yilYas} years, {props.ayYas} months,{" "}
-            {props.gunYas} days old.
-            <br />
-            <br />
-            There are {props.ayniIsimdeIlSayi} people with your name in{" "}
-            {props.il} province and <br /> there are{" "}
-            {props.ayniIsimdeTurkiyeSayi} in Türkiye.
+            {texts.introLeftText5_1} {props.ayniIsimdeIlSayi}{" "}
+            {texts.introLeftText5_2} {props.il} {texts.introLeftText6}
+            <br /> {texts.introLeftText7} {props.ayniIsimdeTurkiyeSayi}{" "}
+            {texts.introLeftText8}
             <br /> <br />
-            There are {props.ayniTarihDoganIlSayi} people born on the same date
-            as you in {props.il} <br /> and there are{" "}
-            {props.ayniTarihDoganTurkiyeSayi} people in Türkiye.
+            {texts.introLeftText5_1} {props.ayniTarihDoganIlSayi}{" "}
+            {texts.introLeftText9} {props.il} <br /> {texts.introLeftText10}{" "}
+            {props.ayniTarihDoganTurkiyeSayi} {texts.introLeftText11}
             <br />
             <br />
-            For your age and gender, your height is {unsignedBoy} cm{" "}
-            {boyMessage} the median value.
+            {texts.introLeftText12} {unsignedBoy} {texts.introLeftText13}{" "}
+            {boyMessage} {texts.introLeftText14}
             <br />
             <br />
-            For your age and gender, your weight is {unsignedKilo} kg{" "}
-            {kiloMessage} the median value.
+            {texts.introLeftText12_1} {unsignedKilo} {texts.introLeftText15}{" "}
+            {kiloMessage} {texts.introLeftText14}
           </span>
         </div>
       </div>

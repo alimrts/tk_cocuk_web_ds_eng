@@ -29,9 +29,11 @@ import sertifika10_thumb from "../../img/certs/sertifika10_thumb.png";
 import sertifika11 from "../../img/certs/sertifika11.png";
 import sertifika11_thumb from "../../img/certs/sertifika11_thumb.png";
 
-import tkc_sertifika from "../../img/tkc_sertifika.png";
+import tkc_sertifika from "../../img/Intro_images/tkc_sertifika.png";
 
 import FloatinDivForNavbarMenu from "../FloatingDiv/FloatinDivForNavbarMenu";
+import texts from "./texts_intro.json";
+import FloatinDivForAltMenu from "../FloatingDiv/FloatinDivForAltMenu";
 const useStyles = makeStyles((theme) => ({
   modal: {
     display: "flex",
@@ -75,12 +77,12 @@ export default function AnimatedModal(props) {
 
   if (typeof props?.boyOrtancaDeger === "number") {
     if (props?.boyOrtancaDeger < 0) {
-      boyMessage = "below.";
+      boyMessage = texts.altMessage;
     } else {
-      boyMessage = "above.";
+      boyMessage = texts.ustMessage;
     }
   } else {
-    boyMessage = "on.";
+    boyMessage = texts.tamMessage;
   }
 
   let kiloMessage = "";
@@ -91,68 +93,35 @@ export default function AnimatedModal(props) {
 
   if (typeof props?.kiloOrtancaDeger === "number") {
     if (props?.kiloOrtancaDeger < 0) {
-      kiloMessage = "below";
+      kiloMessage = texts.altMessage;
     } else {
-      kiloMessage = "above";
+      kiloMessage = texts.ustMessage;
     }
   } else {
-    kiloMessage = "on.";
+    kiloMessage = texts.tamMessage;
   }
 
+  const {
+    darkMode,
+    yilYas,
+    ayYas,
+    gunYas,
+    il,
+    ayniIsimdeIlSayi,
+    ayniIsimdeTurkiyeSayi,
+    ayniTarihDoganIlSayi,
+    ayniTarihDoganTurkiyeSayi,
+  } = props;
+
   const fullText =
-    "As of today, you are " +
-    props.yilYas +
-    " years " +
-    props.ayYas +
-    " months " +
-    props.gunYas +
-    " days old." +
-    "\n" +
-    "\n" +
-    "There are " +
-    props.ayniIsimdeIlSayi +
-    " people with your name in " +
-    props.il +
-    " province and there are " +
-    props.ayniIsimdeTurkiyeSayi +
-    " in Türkiye." +
-    "\n" +
-    "\n" +
-    "There are " +
-    props.ayniTarihDoganIlSayi +
-    " people born on the same date as you in " +
-    props.il +
-    " and there are " +
-    props.ayniTarihDoganTurkiyeSayi +
-    " people in Türkiye." +
-    "\n" +
-    "\n" +
-    "For your age and gender, your height is " +
-    unsignedBoy +
-    " cm " +
-    boyMessage +
-    " the median value." +
-    "\n" +
-    "\n" +
-    "For your age and gender, your weight is " +
-    unsignedKilo +
-    " kg " +
-    kiloMessage +
-    " the median value.";
+    `${texts.introLeftText1} ${yilYas} ${texts.introLeftText2} ${ayYas} ${texts.introLeftText3} ${gunYas} ${texts.introLeftText4}\n\n` +
+    `${texts.introLeftText5} ${il} ${texts.introLeftText6} ${ayniIsimdeIlSayi}, ${texts.introLeftText8} ${ayniIsimdeTurkiyeSayi} ${texts.introLeftText7}\n\n` +
+    `${il} ${texts.introLeftText9} ${ayniTarihDoganIlSayi}, ${texts.introLeftText10} ${ayniTarihDoganTurkiyeSayi} ${texts.introLeftText11}\n\n` +
+    `${texts.introLeftText12} ${unsignedBoy} ${texts.introLeftText13} ${boyMessage}\n\n` +
+    `${texts.introLeftText14} ${unsignedKilo} ${texts.introLeftText15} ${kiloMessage}`;
 
   console.log("fulltext: ", fullText);
 
-  // const text1Left = 160;
-  // const text1Top = 90;
-
-  // const text2Left = 320;
-  // const text2Top = 120;
-
-  // const text3Left = 210;
-  // const text3Top = 160;
-
-  // const text4Left = 500;
-  // const text4Top = 420;
   const [textPositions, setTextPositions] = useState({
     text1Left: 160,
     text1Top: 90,
@@ -322,7 +291,7 @@ export default function AnimatedModal(props) {
         text3Top: 215,
         text3Width: 420,
         text4Left: 200,
-        text4Top: 380,
+        text4Top: 395,
       });
     }
   };
@@ -333,7 +302,7 @@ export default function AnimatedModal(props) {
 
   return (
     <div>
-      <FloatinDivForNavbarMenu img={tkc_sertifika} onClick={handleOpen} />
+      <FloatinDivForAltMenu img={tkc_sertifika} onClick={handleOpen} />
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -354,7 +323,7 @@ export default function AnimatedModal(props) {
             <h2
               style={{ textAlign: "center", fontSize: "12pt", color: "orange" }}
             >
-              Certificates
+              Sertifikalar
             </h2>
             <div>
               <button

@@ -18,6 +18,8 @@ import cocukhak1i from "../../img/cocuk_haklari_cards/cocuk_hak1.png";
 import cocukhak2i from "../../img/cocuk_haklari_cards/cocuk_hak2.png";
 import cocukhak3i from "../../img/cocuk_haklari_cards/cocuk_hak3.png";
 
+import texts from "./texts_cocukhaklari2.json";
+
 // Initialize the Navigation module
 SwiperCore.use([Navigation]);
 
@@ -27,30 +29,6 @@ const swiperProps = {
     nextEl: ".swiper-button-next-cocuk",
   },
 };
-
-// const text1 = (
-//   <span>
-//     Bu sayfada olduğuna göre sanırım on sekiz yaşın altındasın ve henüz on sekiz
-//     yaşın altındaysan benim gibi sana da çocuk diyeceğim.
-//   </span>
-// );
-
-// const text2 = (
-//   <span>
-//     Sadece çocuk olduğumuz için doğuştan ediniğimiz ve her çocuk için geçerli
-//     olan bazı haklar var. <br />
-//     Bu haklar, çocukların daha iyi koşullarda yaşamasını, korunmasını ve
-//     düşüncelerini özgürce ifade edebilmesini amaçlıyor.
-//   </span>
-// );
-
-// const text3 = (
-//   <span>
-//     Birleşmiş Milletler Çocuk Haklarına Dair Sözleşme, Birleşmiş Milletler Genel
-//     Kurulu tarafından 20 Kasım 1989 yılında kabul edilmiş.
-//     <br /> Haydi gel, şimdi haklarımızın neler olduğunu birlikte öğrenelim.
-//   </span>
-// );
 
 const cocukhak1 = <img src={cocukhak1i} className="cocuk-images" alt="" />;
 const cocukhak2 = <img src={cocukhak2i} className="cocuk-images" alt="" />;
@@ -75,11 +53,11 @@ const Cocukhaklari = () => {
       <NavbarRegister />
       <div className="cocuk-content">
         <div className="t-heading-cocuk">
-          <span>What are </span>
-          <span>Children's Rights</span>
+          <span>{texts.textHeader1}</span>
+          <span>{texts.textHeader2}</span>
           <span style={{ fontSize: "14pt" }}>
             <br />
-            Click on the cards for explanations.
+            {texts.textAciklama}
           </span>
         </div>
         <div className="right-column-cocuk">

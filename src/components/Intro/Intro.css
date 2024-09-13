@@ -155,6 +155,11 @@
   cursor: pointer;
 }
 
+.passive {
+  opacity: 0.5; /* Example of passive look */
+  pointer-events: none; /* Disable click events */
+}
+
 
 
 :root {

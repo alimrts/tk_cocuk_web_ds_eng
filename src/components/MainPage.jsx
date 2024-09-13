@@ -34,7 +34,7 @@ const MainPage = () => {
     if (event.keyCode === 27) {
       // ESC key
       setShowMetaverse(false);
-      // exitFullScreen();
+      //exitFullScreen();
     }
   };
   useEffect(() => {
@@ -70,8 +70,9 @@ const MainPage = () => {
     if (userInfo === null) {
       // Redirect to RegisterPage if user information is not available
       history.push("/");
-      // exitFullScreen();
+      //exitFullScreen();
     }
+    console.log("userInfo: ", userInfo);
   }, [userInfo, history]);
 
   useEffect(() => {
@@ -110,12 +111,10 @@ const MainPage = () => {
   useEffect(() => {
     document.body.style.overflowY = "scroll";
     document.body.style.overflowX = "hidden";
-
     return () => {
       document.body.style.overflow = "auto"; // Reset to default
     };
   }, []);
-
   return (
     <div>
       {showMetaverse ? (
@@ -125,7 +124,7 @@ const MainPage = () => {
               className="button i-button"
               onClick={() => {
                 setShowMetaverse(false);
-                // exitFullScreen();
+                //exitFullScreen();
               }}
               style={{
                 position: "absolute",
@@ -133,7 +132,6 @@ const MainPage = () => {
                 transform: "scale(0.6)",
                 lineHeight: 1.4,
                 fontSize: 34,
-                overflow: "hidden",
               }}
             >
               X

@@ -10,22 +10,22 @@ import SwiperCore, { Navigation } from "swiper/core";
 
 import arrowSlider from "../../img/arrow_slider.png";
 
-import tkc_istatistik_timeline from "../../img/tkc_istatistik_timeline.png";
+import tkc_istatistik_timeline from "../../img/istatistik_images/tkc_istatistik_timeline.png";
 
 import tkc_kuslar1 from "../../img/tkc_kuslar1.png";
 
-import istatistik1i from "../../img/istatistik_cards/istatistik1.png";
-import istatistik2i from "../../img/istatistik_cards/istatistik2.png";
-import istatistik3i from "../../img/istatistik_cards/istatistik3.png";
-import istatistik4i from "../../img/istatistik_cards/istatistik4.png";
-import istatistik5i from "../../img/istatistik_cards/istatistik5.png";
-import istatistik6i from "../../img/istatistik_cards/istatistik6.png";
-import istatistik7i from "../../img/istatistik_cards/istatistik7.png";
-import istatistik8i from "../../img/istatistik_cards/istatistik8.png";
-import istatistik9i from "../../img/istatistik_cards/istatistik9.png";
-import istatistik10i from "../../img/istatistik_cards/istatistik10.png";
-import istatistik11i from "../../img/istatistik_cards/istatistik11.png";
-import istatistik12i from "../../img/istatistik_cards/istatistik12.png";
+import istatistik1i from "../../img/istatistik_images/istatistik1.png";
+import istatistik2i from "../../img/istatistik_images/istatistik2.png";
+import istatistik3i from "../../img/istatistik_images/istatistik3.png";
+import istatistik4i from "../../img/istatistik_images/istatistik4.png";
+import istatistik5i from "../../img/istatistik_images/istatistik5.png";
+import istatistik6i from "../../img/istatistik_images/istatistik6.png";
+import istatistik7i from "../../img/istatistik_images/istatistik7.png";
+import istatistik8i from "../../img/istatistik_images/istatistik8.png";
+import istatistik9i from "../../img/istatistik_images/istatistik9.png";
+import istatistik10i from "../../img/istatistik_images/istatistik10.png";
+import istatistik11i from "../../img/istatistik_images/istatistik11.png";
+import istatistik12i from "../../img/istatistik_images/istatistik12.png";
 
 // Initialize the Navigation module
 SwiperCore.use([Navigation]);

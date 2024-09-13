@@ -390,60 +390,6 @@ export default function MemoryGame() {
         ) : (
           ""
         )}
-
-        {/* <Dialog
-          open={showModal}
-          disableBackdropClick
-          disableEscapeKeyDown
-          aria-labelledby="alert-dialog-title"
-          aria-describedby="alert-dialog-description"
-        >
-          <DialogTitle
-            id="alert-dialog-title"
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              textAlign: "center",
-            }}
-          >
-            Tebrikler!
-            <br /> Tüm kartları buldun.
-          </DialogTitle>
-          <DialogContent>
-            <DialogContentText
-              id="alert-dialog-description"
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                textAlign: "center",
-              }}
-            >
-              Oyunu {moves} hamlede tamamladın. <br /> En iyi hamle sayın{" "}
-              {bestScore}
-            </DialogContentText>
-          </DialogContent>
-          <DialogActions
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              textAlign: "center",
-            }}
-          >
-            <button
-              className="mGamebuttonYenile"
-              onClick={handleRestart}
-              color="primary"
-            >
-              Tekrar Oyna
-            </button>
-          </DialogActions>
-        </Dialog> */}
       </div>
     </div>
   );

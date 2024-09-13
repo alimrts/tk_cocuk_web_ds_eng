@@ -71,6 +71,8 @@
   cursor: pointer;
   transition: transform 0.3s; /* Animation */
 }
+
+
 .floatingDivForMenuAlt:hover {
   transform: scale(1.05);
 
@@ -80,6 +82,28 @@
   transform: scale(0.8);
 }
 
+
+/* --------------------- */
+
+.floatingDivForAltMenu {
+  display: flex;
+  align-items: center;
+  height: 4.5rem;
+  cursor: pointer;
+  transition: transform 0.3s; /* Animation */
+}
+
+
+.floatingDivForAltMenu:hover {
+  transform: scale(1.05);
+
+  filter: sepia(100%) hue-rotate(60deg) saturate(250%) brightness(100%) contrast(200%);
+}
+.floatingDivForAltMenu > img {
+  transform: scale(0.8);
+}
+
+/* ---------------- */
 
 
 .floatingDivForIntroRight {

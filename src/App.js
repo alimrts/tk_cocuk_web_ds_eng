@@ -2,7 +2,7 @@ import "./App.css";
 
 import { useContext } from "react";
 import { themeContext } from "./Context";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import RegisterPage from "./components/Register/RegisterPage";
@@ -13,6 +13,7 @@ import Geleneksel from "./components/Geleneksel/Geleneksel";
 import Cocukhaklari from "./components/cocukhaklari/Cocukhaklari";
 
 import useZustandStore from "./zustandStore";
+import axios from "axios";
 
 let calcScrollValue = () => {
   if (
@@ -51,6 +52,24 @@ function App() {
   const handleUserRegister = (formData) => {
     setUserInfo(formData);
   };
+
+  const { REACT_APP_ADMIN_API_BASE_URL } = process.env;
+
+  const updateVisitorCount = async () => {
+    try {
+      await axios.post(
+        REACT_APP_ADMIN_API_BASE_URL + "visitor/update-visitor-count"
+      );
+      console.log("Visitor count updated successfully.");
+    } catch (error) {
+      console.error("Error updating visitor count:", error);
+    }
+  };
+
+  useEffect(() => {
+    updateVisitorCount();
+  }, []);
+
   return (
     <div
       className="App"

@@ -1,40 +1,31 @@
+
 .card {
-  /* Sizing */
   height: 110%;
   width: 100%;
-  
-  transform-style: preserve-3d;
-
-  /* Content Alignment */
+  transform-style: preserve-3d; 
   position: relative;
-
-  /* Styling */
   border-radius: 4px;
   border: 4px solid white;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
-
   user-select: none;
   cursor: pointer;
+  will-change: transform;
+}
+
+.flip-enter, .flip-enter-active, .flip-exit, .flip-exit-active {
+  will-change: transform;
 }
 
 .card-front,
 .card-back {
-  /* Sizing */
   height: 100%;
   width: 95%;
-  
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-
-  /* Alignment */
   position: absolute;
-
-  /* Content Alignment */
   display: flex;
   justify-content: center;
   align-items: center;
-
-  /* Content Styling */
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 180;
   font-size: 12.5px;
@@ -42,7 +33,14 @@
   padding-right: 4px;
   text-align: left;
   color: white;
-  /* text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9); */
+}
+
+.card-front {
+  z-index: 1;
+}
+
+.card-back {
+  z-index: 2;
 }
 
 .card-front {
@@ -52,7 +50,64 @@
 }
 
 .card-back {
-  
   background-color: #ffad66;
   transform: rotateY(180deg);
+}
+
+.flip-exit-done {
+  transform: rotateY(180deg);
+}
+
+.flip-enter-done {
+  transform: rotateY(0deg);
+}
+
+.flip-enter {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+}
+
+.flip-enter-active {
+  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  transition: transform 300ms;
+  -webkit-transition: transform 300ms;
+  -moz-transition: transform 300ms;
+  -ms-transition: transform 300ms;
+  transition-timing-function: cubic-bezier(0.57, 0.21, 0.69, 1.25);
+}
+
+.flip-exit {
+  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+}
+
+.flip-exit-active {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transition: transform 300ms;
+  -webkit-transition: transform 300ms;
+  -moz-transition: transform 300ms;
+  -ms-transition: transform 300ms;
+  transition-timing-function: cubic-bezier(0.57, 0.21, 0.69, 1.25);
+}
+
+.flippable-card-container {
+  margin-top: 16%;
+  height: 220px;
+  width: 200px;
+  perspective: 1000px;
+  display: flex;
+  flex-direction: 'column';
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }

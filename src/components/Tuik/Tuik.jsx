@@ -6,14 +6,14 @@ import "swiper/css";
 import { Pagination } from "swiper";
 import "swiper/css/pagination";
 
-import tkc_tuik_timeline from "../../img/tkc_tuik_timeline.png";
+import tkc_tuik_timeline from "../../img/tuik_images/tkc_tuik_timeline.png";
 import arrowSlider from "../../img/arrow_slider.png";
 import tkc_kuslar1 from "../../img/tkc_kuslar1.png";
 
-import tuik1i from "../../img/tuik_cards/tuik1.png";
-import tuik2i from "../../img/tuik_cards/tuik2.png";
-import tuik3i from "../../img/tuik_cards/tuik3.png";
-import tuik4i from "../../img/tuik_cards/tuik4.png";
+import tuik1i from "../../img/tuik_images/tuik1.png";
+import tuik2i from "../../img/tuik_images/tuik2.png";
+import tuik3i from "../../img/tuik_images/tuik3.png";
+import tuik4i from "../../img/tuik_images/tuik4.png";
 
 // Initialize the Navigation module
 SwiperCore.use([Navigation]);

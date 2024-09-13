@@ -6,9 +6,7 @@ import Toggle from "../Toggle/Toggle";
 import "./Navbar.css";
 import tkc_logo from "../../img/tkc_logo.png";
 import tkc_anasayfa from "../../img/tkc_anasayfa.png";
-import tkc_istatistik from "../../img/tkc_istatistik.png";
-import tkc_video from "../../img/tkc_video.png";
-import tkc_tuik from "../../img/tkc_tuik.png";
+
 import { Link } from "react-scroll";
 import { NavLink } from "react-router-dom";
 import FloatinDivForNavbarLogo from "../FloatingDiv/FloatingDivForNavbarLogo";
@@ -16,7 +14,6 @@ import FloatinDivForNavbarMenu from "../FloatingDiv/FloatinDivForNavbarMenu";
 
 import tkc_kuslar1 from "../../img/tkc_kuslar1.png";
 import tkc_kuslar2 from "../../img/tkc_kuslar2.png";
-import kus1 from "../../img/kus1.png";
 
 const Navbar = () => {
   const theme = useContext(themeContext);

@@ -2,6 +2,7 @@ import React from "react";
 import FlippableCard from "./flippable-card";
 import { FilterTabs } from "./constants";
 import styled from "styled-components";
+import texts from "./texts_cocukhaklari2.json";
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -96,9 +97,7 @@ const CardsGrid = () => {
           userSelect: "none",
         }}
       >
-        The Convention consists of 54 articles in total. Articles 43 to 54
-        describe the activities that adults and governments will carry out in
-        cooperation to ensure that children enjoy their rights.
+        {texts.textSonCard}
       </span>
     </Grid>
   );
