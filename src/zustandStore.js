@@ -3,7 +3,6 @@ import create from "zustand";
 import { devtools, persist } from "zustand/middleware";
 
 import strings from "./components/Register/strings.json";
-import stringsEng from "./components/Register/stringsEng.json";
 
 const zustandStore = (set) => ({
   courses: [],
@@ -37,7 +36,7 @@ const zustandStore = (set) => ({
   setLanguage: (selectedLanguage) => set({ language: selectedLanguage }),
   languageData: {
     default: strings,
-    eng: stringsEng,
+    eng: strings,
     // ger: stringsGer,
     // french: stringsFrench,
     // spanish: stringsSpanish,
