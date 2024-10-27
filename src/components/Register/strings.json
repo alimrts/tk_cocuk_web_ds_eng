@@ -2,7 +2,7 @@
   "yukleniyor": "Loading...",
   "registerPageGiris": "TUIK Children's Platform Login",
   "registerPageBilgileriDoldur": "Fill in Information and Choose Your Character",
-  "registerPageBilgileriDoldurma": "Continue Without Filling Information",
+  "registerPageBilgileriDoldurma": "Continue without Filling out the Information",
   "registerPageAdin": "Your Name",
   "registerPageKilon": "Your Weight in kg",
   "registerPageBoyun": "Your Height in cm",
@@ -19,7 +19,7 @@
   "registerPageLutfenGerekliBilgiler": "Please fill in the required information.",
   "registerPageBuAlanZorunludur": "This field is mandatory.",
   "apiHatasi": "Error!",
-  "apiHatasiAciklama": "Required information could not be created.",
-  "bilgilerAciklama": "Required information could not be generated. Go to the previous page and fill in your information to see statistics about your name.",
+  "apiHatasiAciklama": "The required information could not be created.",
+  "bilgilerAciklama": "The required information could not be created. To see statistics for your name, go to the previous page and fill in your information.",
   "registerPageRestrictedText": "You cannot use restricted words for your name."
 }

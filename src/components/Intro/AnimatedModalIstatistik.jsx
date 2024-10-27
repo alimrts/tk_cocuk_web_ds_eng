@@ -130,7 +130,7 @@ export default function AnimatedModalIstatistik(props) {
 
   const [options, setOptions] = useState({
     chart: {
-      fontFamily: "Noteworthy",
+      fontFamily: "Noteworthy, Noteworthy-Bold, Arial, sans-serif",
       fontSize: "10pt",
       width: "100%",
       height: 400,
@@ -276,6 +276,7 @@ export default function AnimatedModalIstatistik(props) {
           setFirstValue(firstValue);
           setLastValue(lastValue);
 
+          filteredData.sort((a, b) => a.dogumYil - b.dogumYil);
           setOptions((prevOptions) => ({
             ...prevOptions,
             xaxis: {
@@ -334,6 +335,7 @@ export default function AnimatedModalIstatistik(props) {
           setFirstValue(firstValue);
           setLastValue(lastValue);
 
+          filteredData.sort((a, b) => a.dogumYil - b.dogumYil);
           setOptions((prevOptions) => ({
             ...prevOptions,
             xaxis: {
@@ -377,27 +379,37 @@ export default function AnimatedModalIstatistik(props) {
       return;
     }
 
-    // Temporarily apply styles to hide overflow and scale content
-    const originalStyle = modalElement.style.cssText;
-    modalElement.style.overflow = "hidden";
-    modalElement.style.width = "auto";
-    modalElement.style.height = "auto";
+    const clonedElement = modalElement.cloneNode(true);
+    document.body.appendChild(clonedElement);
 
+    clonedElement.style.overflow = "hidden";
+    clonedElement.style.position = "absolute";
+    clonedElement.style.top = "0";
+    clonedElement.style.left = "0";
+    modalElement.style.width = "auto";
+    clonedElement.style.height = "auto";
+    clonedElement.style.zIndex = "-10";
+
+    const downloadButton = clonedElement.querySelector("#modal-button");
+    const downloadButtonX = clonedElement.querySelector("#modal-buttonx");
+    if (downloadButton) {
+      downloadButton.style.display = "none";
+      downloadButtonX.style.display = "none";
+    }
     setTimeout(() => {
-      toPng(modalElement)
+      toPng(clonedElement, {
+        width: clonedElement.style.width,
+        height: clonedElement.scrollHeight,
+      })
         .then((dataUrl) => {
           saveAs(dataUrl, props.ad + "_istatistik.png");
-
-          // Revert styles after download
-          modalElement.style.cssText = originalStyle;
+          document.body.removeChild(clonedElement);
         })
-        .catch((err) => {
-          console.error("Failed to download image", err);
-
-          // Revert styles in case of error
-          modalElement.style.cssText = originalStyle;
+        .catch((error) => {
+          console.error("Failed to download modal content:", error);
+          document.body.removeChild(clonedElement);
         });
-    }, 500); // Ensure rendering is complete
+    }, 300);
   };
   return (
     <div>
@@ -417,7 +429,11 @@ export default function AnimatedModalIstatistik(props) {
         <Fade in={open}>
           <div className={classes.paper} id="modal-content">
             <div style={{ marginLeft: "14rem" }}>
-              <button className="certCloseBtn" onClick={handleClose}>
+              <button
+                className="certCloseBtn"
+                id="modal-buttonx"
+                onClick={handleClose}
+              >
                 X
               </button>
             </div>
@@ -436,15 +452,17 @@ export default function AnimatedModalIstatistik(props) {
                   fontSize: "15pt",
                 }}
               >
-                {turkishUpperCase(props.ad ?? "") +
+                {texts.isminSirasi1 +
                   " " +
-                  texts.isminSirasi1 +
+                  turkishUpperCase(props.ad ?? "") +
                   " " +
                   (props.cinsiyet === "1"
                     ? texts.isminSirasiErkek
                     : texts.isminSirasiKiz) +
                   " " +
-                  texts.isminSirasi2}
+                  texts.isminSirasi2 +
+                  " " +
+                  texts.isminSirasi2_1}
               </h2>
 
               <h2
@@ -526,6 +544,7 @@ export default function AnimatedModalIstatistik(props) {
 
                 <button
                   className="button"
+                  id="modal-button"
                   style={{
                     position: "absolute",
                     bottom: "20px",
