@@ -243,13 +243,73 @@ export default function AnimatedModalIstatistik(props) {
 
   const [series, setSeries] = useState([]);
 
+  //////////////////////////////////////////////////
+  const setChartData = (data) => {
+    const filteredData = data.yilSiraList.sort(
+      (a, b) => a.dogumYil - b.dogumYil
+    );
+
+    const minY = Math.min(...filteredData.map((item) => item.sira));
+    const maxY = Math.max(...filteredData.map((item) => item.sira));
+
+    setMinValue(minY);
+    setMaxValue(maxY);
+
+    const firstValue = filteredData[0] ? filteredData[0].sira : null;
+    const lastValue = filteredData[filteredData.length - 1]
+      ? filteredData[filteredData.length - 1].sira
+      : null;
+
+    setFirstValue(firstValue);
+    setLastValue(lastValue);
+
+    setOptions((prevOptions) => ({
+      ...prevOptions,
+      xaxis: {
+        ...prevOptions.xaxis,
+        categories: filteredData.map((item) => item.dogumYil),
+      },
+      yaxis: {
+        ...prevOptions.yaxis,
+        min: 1,
+        max: maxY,
+      },
+    }));
+
+    setSeries([
+      {
+        name: texts.sira,
+        data: filteredData.map((item) => item.sira),
+      },
+    ]);
+
+    setVariables({
+      isminIlkVerildigiYil:
+        data.isminIlkVerildigiYil || dummyData.isminIlkVerildigiYil,
+      isminVerilisSirasiEnDusukYil:
+        data.isminVerilisSirasiEnDusukYil ||
+        dummyData.isminVerilisSirasiEnDusukYil,
+      isminVerilisSirasiEnYuksekYil:
+        data.isminVerilisSirasiEnYuksekYil ||
+        dummyData.isminVerilisSirasiEnYuksekYil,
+      isminEnSonVerildigiYil:
+        data.isminEnSonVerildigiYil || dummyData.isminEnSonVerildigiYil,
+    });
+  };
+
+  ///////
+  const [apiData, setApiData] = useState(null);
+
   const getInfo = () => {
+    if (apiData) {
+      setChartData(apiData);
+      setLoading(false);
+      return;
+    }
     if (props.cinsiyet != null) {
-      // .get(process.env.REACT_APP_PROXY_URL + "/dashboard", {
       axios
         .post(
-          process.env.REACT_APP_PROXY_FOR_NIP_URL +
-            "/External/GetYilCocukIsimListWithParams",
+          `${process.env.REACT_APP_PROXY_FOR_NIP_URL}/External/GetYilCocukIsimListWithParams`,
           {
             isim: turkishUpperCase(props.ad ?? ""),
             cinsiyet: parseInt(props.cinsiyet, 10),
@@ -257,110 +317,20 @@ export default function AnimatedModalIstatistik(props) {
         )
         .then((dashboardResponse) => {
           const data = dashboardResponse.data;
-
-          const filteredData = data.yilSiraList.sort(
-            (a, b) => a.dogumYil - b.dogumYil
-          );
-
-          const minY = Math.min(...filteredData.map((item) => item.sira));
-          const maxY = Math.max(...filteredData.map((item) => item.sira));
-
-          setMinValue(minY);
-          setMaxValue(maxY);
-
-          const firstValue = filteredData[0] ? filteredData[0].sira : null;
-          const lastValue = filteredData[filteredData.length - 1]
-            ? filteredData[filteredData.length - 1].sira
-            : null;
-
-          setFirstValue(firstValue);
-          setLastValue(lastValue);
-
-          filteredData.sort((a, b) => a.dogumYil - b.dogumYil);
-          setOptions((prevOptions) => ({
-            ...prevOptions,
-            xaxis: {
-              ...prevOptions.xaxis,
-              categories: filteredData.map((item) => item.dogumYil),
-            },
-            yaxis: {
-              ...prevOptions.yaxis,
-              min: 1,
-              max: maxY,
-            },
-          }));
-          setSeries([
-            {
-              name: texts.sira,
-              data: filteredData.map((item) => item.sira),
-            },
-          ]);
-
-          setVariables({
-            isminIlkVerildigiYil:
-              data.isminIlkVerildigiYil || dummyData.isminIlkVerildigiYil,
-            isminVerilisSirasiEnDusukYil:
-              data.isminVerilisSirasiEnDusukYil ||
-              dummyData.isminVerilisSirasiEnDusukYil,
-            isminVerilisSirasiEnYuksekYil:
-              data.isminVerilisSirasiEnYuksekYil ||
-              dummyData.isminVerilisSirasiEnYuksekYil,
-            isminEnSonVerildigiYil:
-              data.isminEnSonVerildigiYil || dummyData.isminEnSonVerildigiYil,
-          });
+          setApiData(data);
+          setChartData(data);
           setLoading(false);
         })
         .catch((error) => {
           console.error("Error getting istatistik data:", error);
-
-          const minY = Math.min(
-            ...dummyData.yilSiraList.map((item) => item.sira)
-          );
-          const maxY = Math.max(
-            ...dummyData.yilSiraList.map((item) => item.sira)
-          );
-
-          setMinValue(minY);
-          setMaxValue(maxY);
-
-          const filteredData = dummyData.yilSiraList.sort(
-            (a, b) => a.dogumYil - b.dogumYil
-          );
-
-          const firstValue = filteredData[0] ? filteredData[0].sira : null;
-          const lastValue = filteredData[filteredData.length - 1]
-            ? filteredData[filteredData.length - 1].sira
-            : null;
-
-          setFirstValue(firstValue);
-          setLastValue(lastValue);
-
-          filteredData.sort((a, b) => a.dogumYil - b.dogumYil);
-          setOptions((prevOptions) => ({
-            ...prevOptions,
-            xaxis: {
-              ...prevOptions.xaxis,
-              categories: dummyData.yilSiraList.map((item) => item.dogumYil),
-            },
-            yaxis: {
-              ...prevOptions.yaxis,
-              min: 1,
-              max: maxY,
-            },
-          }));
-          setSeries([
-            {
-              name: texts.sira,
-              data: dummyData.yilSiraList.map((item) => item.sira),
-            },
-          ]);
-          setVariables(dummyData);
+          setChartData(dummyData); // Fallback to dummy data on error
           setLoading(false);
         });
     } else {
       setLoading(false);
     }
   };
+  //////////////////////////////////////////////////
 
   const handleOpen = () => {
     setOpen(true);
@@ -456,11 +426,11 @@ export default function AnimatedModalIstatistik(props) {
                   " " +
                   turkishUpperCase(props.ad ?? "") +
                   " " +
+                  texts.isminSirasi2 +
+                  " " +
                   (props.cinsiyet === "1"
                     ? texts.isminSirasiErkek
                     : texts.isminSirasiKiz) +
-                  " " +
-                  texts.isminSirasi2 +
                   " " +
                   texts.isminSirasi2_1}
               </h2>
