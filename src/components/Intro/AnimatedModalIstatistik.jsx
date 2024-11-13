@@ -123,11 +123,6 @@ export default function AnimatedModalIstatistik(props) {
     return str.replace(/i/g, "İ").replace(/ı/g, "I").toUpperCase();
   };
 
-  const getYearFromDataPointIndex = (dataPointIndex) => {
-    const yearEntry = dummyData.yilSiraList[dataPointIndex];
-    return yearEntry ? yearEntry.dogumYil : "";
-  };
-
   const [options, setOptions] = useState({
     chart: {
       fontFamily: "Noteworthy, Noteworthy-Bold, Arial, sans-serif",
@@ -229,9 +224,7 @@ export default function AnimatedModalIstatistik(props) {
       shared: true,
       intersect: false,
       x: {
-        formatter: function (value, { seriesIndex, dataPointIndex, w }) {
-          return getYearFromDataPointIndex(dataPointIndex) || value;
-        },
+        formatter: undefined,
       },
       y: {
         formatter: function (val) {
@@ -248,7 +241,6 @@ export default function AnimatedModalIstatistik(props) {
     const filteredData = data.yilSiraList.sort(
       (a, b) => a.dogumYil - b.dogumYil
     );
-
     const minY = Math.min(...filteredData.map((item) => item.sira));
     const maxY = Math.max(...filteredData.map((item) => item.sira));
 
@@ -263,16 +255,39 @@ export default function AnimatedModalIstatistik(props) {
     setFirstValue(firstValue);
     setLastValue(lastValue);
 
+    const sortedYears = filteredData.map((item) => item.dogumYil).reverse();
+
+    const reversedSortedYears = sortedYears.reverse();
+
     setOptions((prevOptions) => ({
       ...prevOptions,
       xaxis: {
         ...prevOptions.xaxis,
-        categories: filteredData.map((item) => item.dogumYil),
+        categories: sortedYears,
       },
+
       yaxis: {
         ...prevOptions.yaxis,
         min: 1,
         max: maxY,
+      },
+      tooltip: {
+        shared: true,
+        intersect: false,
+        x: {
+          // formatter: function (value) {
+          //   // Reversed year for tooltip display
+          //   return reversedSortedYears[value]; // Reverse the years array on tooltip only
+          // },
+          formatter: function (_, { dataPointIndex }) {
+            return sortedYears[dataPointIndex]; // Directly use the index from categories
+          },
+        },
+        y: {
+          formatter: function (val) {
+            return val;
+          },
+        },
       },
     }));
 
@@ -309,7 +324,8 @@ export default function AnimatedModalIstatistik(props) {
     if (props.cinsiyet != null) {
       axios
         .post(
-          `${process.env.REACT_APP_PROXY_FOR_NIP_URL}/External/GetYilCocukIsimListWithParams`,
+          // `${process.env.REACT_APP_PROXY_FOR_NIP_URL}/External/GetYilCocukIsimListWithParams`,
+          `/External/GetYilCocukIsimListWithParams`,
           {
             isim: turkishUpperCase(props.ad ?? ""),
             cinsiyet: parseInt(props.cinsiyet, 10),
