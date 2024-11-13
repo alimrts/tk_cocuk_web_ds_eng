@@ -1,5 +1,6 @@
 import React from "react";
 import useZustandStore from "../../zustandStore";
+import { NavLink } from "react-router-dom";
 
 const LoadingIntroWithoutRegister = () => {
   const { language, setLanguage, languageData } = useZustandStore();
@@ -17,7 +18,10 @@ const LoadingIntroWithoutRegister = () => {
     >
       {/* {strings.apiHatasi} */}
       <br />
-      {strings.bilgilerAciklama}
+      {/* {strings.bilgilerAciklama} */}
+      <NavLink to={{ pathname: "/" }} target="_self">
+        {strings.bilgilerAciklama}
+      </NavLink>
     </div>
   );
 };
