@@ -34,6 +34,8 @@
   "isminVerilisSirasiEnYuksekYil": "The Year with the Lowest Order of Naming:",
   "isminEnSonVerildigiYil": "The Year the Name was Last Given:",
   "verilerMevcuttur": "(*) Data available from 1850",
+  "nameError": "The name you provided is not found in our records.",
+  "dataError": "There was an issue while fetching the data.",
   "indir": "Download",
   "yukleniyor": "% loading"
 }

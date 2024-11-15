@@ -262,23 +262,34 @@ const UserRegister = ({ onSubmit, onGenderChange }) => {
   const handleChangeName = (event) => {
     const { name, value } = event.target;
 
-    const uppercaseValue = value.toUpperCase();
+    const sanitizedValue = value
+      .replace(/[^a-zA-ZğüşöçĞÜŞÖÇıİ ]+/g, "")
+      .slice(0, 25);
+
+    const isValidPattern =
+      /^(?=.{2,25}$)(?!.*(.)\1{2})(?!.*[ ]{2})[a-zA-ZğüşöçĞÜŞÖÇıİ ]+$/.test(
+        sanitizedValue
+      );
+
+    const uppercaseValue = sanitizedValue.toUpperCase();
     const uppercaseBlacklist = blacklist.words.map((word) =>
       word.toUpperCase()
     );
     const isBlacklisted = uppercaseBlacklist.includes(uppercaseValue);
 
-    setContainsRestrictedText(isBlacklisted);
+    const hasVowels = /[aeiouAEIOUıİöÖüÜ]/.test(sanitizedValue);
+    const excessiveConsonants = /[^aeiouAEIOUıİöÖüÜğüşçĞÜŞÖÇ ]{4,}/.test(
+      sanitizedValue
+    );
 
-    if (value.length < 2) {
-      setContainsRestrictedText(true);
-    } else {
-      setContainsRestrictedText(false);
-    }
+    const isInvalidName =
+      !isValidPattern || isBlacklisted || !hasVowels || excessiveConsonants;
+
+    setContainsRestrictedText(isInvalidName);
 
     setFormData((prevFormData) => ({
       ...prevFormData,
-      [name]: value,
+      [name]: sanitizedValue,
     }));
   };
 
