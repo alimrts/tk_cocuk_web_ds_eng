@@ -14,6 +14,12 @@ import * as THREE from "three";
 import { MeshStandardMaterial } from "three";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import mySvgImage from "./cursor_360.svg";
+import { extend } from "@react-three/fiber";
+import { RingGeometry } from "three";
+
+// Extend the THREE namespace
+extend({ RingGeometry });
+
 
 function LoaderBase() {
   const { progress } = useProgress();
@@ -35,7 +41,7 @@ const Orbit = ({ radius, thickness, rotation, children }) => {
   return (
     <group ref={orbitRef} rotation={rotation}>
       <mesh rotation={[Math.PI / 2, 0, 0]}>
-        <ringBufferGeometry
+        <ringGeometry
           args={[radius - thickness / 2, radius + thickness / 2, 128]}
         />
         <meshBasicMaterial color="gray" side={THREE.DoubleSide} />
